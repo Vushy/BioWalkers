@@ -1,4 +1,5 @@
 res://scene/battle.tscn
 res://panel.tres
 res://battle.tres
-res://script/battle.gd
+res://scene/player.tscn
+res://scene/touchpad_direction.tscn
