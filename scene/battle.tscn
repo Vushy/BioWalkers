@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://ckw232rv124tw"]
+[gd_scene load_steps=11 format=3 uid="uid://ckw232rv124tw"]
 
 [ext_resource type="Script" path="res://script/battle.gd" id="1_gnwya"]
 [ext_resource type="Texture2D" uid="uid://dinn2f7758p5q" path="res://art/backgrounds/back.png" id="1_kjwsa"]
@@ -7,6 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://526qc71gu75i" path="res://scene/battle_player.tscn" id="4_ca7tq"]
 [ext_resource type="PackedScene" uid="uid://dp2m2o5lnbyke" path="res://scene/enemy_slime_battle.tscn" id="5_uep4d"]
 [ext_resource type="PackedScene" uid="uid://81r51837d822" path="res://scene/health.tscn" id="5_xxew2"]
+[ext_resource type="PackedScene" uid="uid://bqokatv26t516" path="res://scene/question_panel.tscn" id="8_mmyiq"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_w7qma"]
 texture = ExtResource("3_8jsle")
@@ -71,3 +72,12 @@ offset_top = 10.0
 offset_right = 172.0
 offset_bottom = 54.0
 scale = Vector2(1.645, 1.645)
+
+[node name="questionpanels" type="CanvasLayer" parent="."]
+
+[node name="Node2D" parent="questionpanels" instance=ExtResource("8_mmyiq")]
+offset_left = 220.0
+offset_top = 105.0
+offset_right = 220.0
+offset_bottom = 105.0
+size_flags_horizontal = 4

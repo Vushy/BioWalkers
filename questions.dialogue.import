@@ -1,0 +1,15 @@
+[remap]
+
+importer="dialogue_manager_compiler_11"
+type="Resource"
+uid="uid://ceujuw082dgu"
+path="res://.godot/imported/questions.dialogue-e8f19ee3f9daf52ac3d522cd7496fe2e.tres"
+
+[deps]
+
+source_file="res://questions.dialogue"
+dest_files=["res://.godot/imported/questions.dialogue-e8f19ee3f9daf52ac3d522cd7496fe2e.tres"]
+
+[params]
+
+defaults=true

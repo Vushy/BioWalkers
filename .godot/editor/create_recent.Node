@@ -1,3 +1,9 @@
+AnimationPlayer
+CanvasLayer
+TextureRect
+Control
+Label
+VBoxContainer
 CharacterBody2D
 RichTextLabel
 Button
@@ -7,8 +13,3 @@ Sprite2D
 HBoxContainer
 Timer
 CollisionShape2D
-Area2D
-AnimationPlayer
-AnimationTree
-ColorRect
-CanvasLayer
