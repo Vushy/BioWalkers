@@ -1,0 +1,10 @@
+[gd_resource type="StyleBoxTexture" load_steps=2 format=3 uid="uid://nm51pj0jglj1"]
+
+[ext_resource type="Texture2D" uid="uid://cnrc1hq00hry" path="res://art/panel/panel-transparent-center-015.png" id="1_m27j5"]
+
+[resource]
+content_margin_left = 14.0
+content_margin_top = 11.0
+content_margin_right = 0.0
+texture = ExtResource("1_m27j5")
+region_rect = Rect2(4, 4, 88, 88)

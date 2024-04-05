@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://ckw232rv124tw"]
+[gd_scene load_steps=16 format=3 uid="uid://ckw232rv124tw"]
 
 [ext_resource type="Script" path="res://script/battle.gd" id="1_gnwya"]
 [ext_resource type="Texture2D" uid="uid://dinn2f7758p5q" path="res://art/backgrounds/back.png" id="1_kjwsa"]
@@ -7,7 +7,9 @@
 [ext_resource type="PackedScene" uid="uid://526qc71gu75i" path="res://scene/battle_player.tscn" id="4_ca7tq"]
 [ext_resource type="PackedScene" uid="uid://dp2m2o5lnbyke" path="res://scene/enemy_slime_battle.tscn" id="5_uep4d"]
 [ext_resource type="PackedScene" uid="uid://81r51837d822" path="res://scene/health.tscn" id="5_xxew2"]
-[ext_resource type="PackedScene" uid="uid://bqokatv26t516" path="res://scene/question_panel.tscn" id="8_mmyiq"]
+[ext_resource type="Theme" uid="uid://c0ecy458b6m0w" path="res://panel.tres" id="8_by5j0"]
+[ext_resource type="FontFile" uid="uid://caepqhvpo3wha" path="res://easvhs.ttf" id="9_ucbum"]
+[ext_resource type="StyleBox" uid="uid://nm51pj0jglj1" path="res://battle.tres" id="10_ksr26"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_w7qma"]
 texture = ExtResource("3_8jsle")
@@ -25,6 +27,79 @@ texture = ExtResource("3_8jsle")
 [sub_resource type="TileSet" id="TileSet_ujvyu"]
 physics_layer_0/collision_layer = 1
 sources/0 = SubResource("TileSetAtlasSource_w7qma")
+
+[sub_resource type="Animation" id="Animation_hlw2k"]
+resource_name = "start"
+length = 0.2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("questionpanels/Label:size")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(0, 290), Vector2(608, 290)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("questionpanels/ItemList:size")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(0, 67), Vector2(579.98, 67)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("questionpanels/Label/Label:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
+}
+
+[sub_resource type="Animation" id="Animation_m6d8r"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("questionpanels/Label:size")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(608, 290)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("questionpanels/ItemList:size")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(579.98, 67)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_4jcvx"]
+_data = {
+"RESET": SubResource("Animation_m6d8r"),
+"start": SubResource("Animation_hlw2k")
+}
 
 [node name="Battle Scene" type="Node2D"]
 script = ExtResource("1_gnwya")
@@ -75,9 +150,51 @@ scale = Vector2(1.645, 1.645)
 
 [node name="questionpanels" type="CanvasLayer" parent="."]
 
-[node name="Node2D" parent="questionpanels" instance=ExtResource("8_mmyiq")]
-offset_left = 220.0
-offset_top = 105.0
-offset_right = 220.0
-offset_bottom = 105.0
-size_flags_horizontal = 4
+[node name="Label" type="Panel" parent="questionpanels"]
+offset_left = 240.0
+offset_top = 74.0
+offset_right = 848.0
+offset_bottom = 364.0
+theme = ExtResource("8_by5j0")
+
+[node name="Label" type="Label" parent="questionpanels/Label"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.023
+anchor_top = 0.04
+anchor_right = 0.981
+anchor_bottom = 0.969
+offset_left = 205.016
+offset_top = 112.4
+offset_right = -209.448
+offset_bottom = -140.01
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("9_ucbum")
+text = "This is Some Questions"
+
+[node name="ItemList" type="ItemList" parent="questionpanels"]
+offset_left = 257.0
+offset_top = 375.0
+offset_right = 836.98
+offset_bottom = 442.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("9_ucbum")
+theme_override_font_sizes/font_size = 15
+theme_override_styles/panel = ExtResource("10_ksr26")
+theme_override_styles/focus = ExtResource("10_ksr26")
+theme_override_styles/hovered = ExtResource("10_ksr26")
+theme_override_styles/selected = ExtResource("10_ksr26")
+theme_override_styles/selected_focus = ExtResource("10_ksr26")
+item_count = 4
+max_columns = 2
+fixed_column_width = 266
+item_0/text = "ITEM 1"
+item_1/text = "ITEM 2"
+item_2/text = "ITEM 3"
+item_3/text = "ITEM 4"
+
+[node name="anim" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_4jcvx")
+}

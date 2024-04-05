@@ -1,11 +1,13 @@
 extends Node2D
 
 
+var finishPanel = false
+var start =  false
 
 func _ready():
-	pass # Replace with function body.
-
-
+	start = true
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	pass
+	if start == true:
+		$anim.play('start')
+		start = false

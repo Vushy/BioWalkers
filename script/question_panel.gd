@@ -1,15 +1,20 @@
 extends Control
 
 
-@onready var panel = $panel
+@onready var panel = $panelLayer/panel
+var finishPanel = false
+var start =  false
 
 func _ready():
 	panel.hide()
-
-
+	start = true
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	if Input.is_action_just_pressed("tap"):
+	if start == true:
 		panel.show()
 		$anim.play('open_panel')
-		
+		start = false
+
+func showChoices():
+	pass
+

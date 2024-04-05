@@ -1,4 +1,4 @@
-[gd_scene load_steps=5 format=3 uid="uid://bqokatv26t516"]
+[gd_scene load_steps=6 format=3 uid="uid://bqokatv26t516"]
 
 [ext_resource type="Script" path="res://script/question_panel.gd" id="1_3da5g"]
 [ext_resource type="Texture2D" uid="uid://cnrc1hq00hry" path="res://art/panel/panel-transparent-center-015.png" id="1_mwq6x"]
@@ -9,7 +9,7 @@ length = 0.2
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("panel:scale")
+tracks/0/path = NodePath("panelLayer/panel:scale")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -19,8 +19,12 @@ tracks/0/keys = {
 "values": [Vector2(0, 3), Vector2(7, 3)]
 }
 
+[sub_resource type="Animation" id="Animation_bq506"]
+resource_name = "Choices"
+
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_bqejf"]
 _data = {
+"Choices": SubResource("Animation_bq506"),
 "open_panel": SubResource("Animation_apc0c")
 }
 
@@ -29,8 +33,14 @@ layout_mode = 3
 anchors_preset = 0
 script = ExtResource("1_3da5g")
 
-[node name="panel" type="TextureRect" parent="."]
-layout_mode = 0
+[node name="anim" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_bqejf")
+}
+
+[node name="panelLayer" type="CanvasLayer" parent="."]
+
+[node name="panel" type="TextureRect" parent="panelLayer"]
 offset_left = 2.0
 offset_top = -3.0
 offset_right = 98.0
@@ -38,7 +48,15 @@ offset_bottom = 93.0
 scale = Vector2(7, 3)
 texture = ExtResource("1_mwq6x")
 
-[node name="anim" type="AnimationPlayer" parent="."]
-libraries = {
-"": SubResource("AnimationLibrary_bqejf")
-}
+[node name="choicesLayer" type="CanvasLayer" parent="."]
+
+[node name="VBoxContainer" type="VBoxContainer" parent="choicesLayer"]
+offset_left = 7.0
+offset_top = 289.0
+offset_right = 652.0
+offset_bottom = 645.0
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 0.5
+one_shot = true
+autostart = true
