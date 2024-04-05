@@ -1,0 +1,71 @@
+[gd_scene load_steps=9 format=3 uid="uid://ckw232rv124tw"]
+
+[ext_resource type="Texture2D" uid="uid://dinn2f7758p5q" path="res://art/backgrounds/back.png" id="1_kjwsa"]
+[ext_resource type="Texture2D" uid="uid://dsdoe546ebi8d" path="res://art/backgrounds/middle.png" id="2_1kg6g"]
+[ext_resource type="Texture2D" uid="uid://dgwe745ufufxb" path="res://art/backgrounds/tiles.png" id="3_8jsle"]
+[ext_resource type="PackedScene" uid="uid://526qc71gu75i" path="res://scene/battle_player.tscn" id="4_ca7tq"]
+[ext_resource type="PackedScene" uid="uid://dp2m2o5lnbyke" path="res://scene/enemy_slime_battle.tscn" id="5_uep4d"]
+[ext_resource type="PackedScene" uid="uid://81r51837d822" path="res://scene/health.tscn" id="5_xxew2"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_w7qma"]
+texture = ExtResource("3_8jsle")
+1:0/size_in_atlas = Vector2i(4, 5)
+1:0/0 = 0
+1:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+1:0/0/physics_layer_0/angular_velocity = 0.0
+1:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-31.9082, -23.0694, 32.6153, -22.539, 31.625, 40.875, -31.875, 41.125)
+6:0/size_in_atlas = Vector2i(4, 5)
+6:0/0 = 0
+6:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+6:0/0/physics_layer_0/angular_velocity = 0.0
+6:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-31.9082, -23.0694, 32.6153, -22.539, 31.625, 40.875, -31.875, 41.125)
+
+[sub_resource type="TileSet" id="TileSet_ujvyu"]
+physics_layer_0/collision_layer = 1
+sources/0 = SubResource("TileSetAtlasSource_w7qma")
+
+[node name="Battle Scene" type="Node2D"]
+
+[node name="Background" type="CanvasLayer" parent="."]
+
+[node name="TextureRect" type="TextureRect" parent="Background"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_kjwsa")
+
+[node name="TextureRect2" type="TextureRect" parent="Background"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_1kg6g")
+
+[node name="Tiles" type="CanvasLayer" parent="."]
+layer = 2
+scale = Vector2(1.71, 1.71)
+transform = Transform2D(1.71, 0, 0, 1.71, 0, 0)
+
+[node name="TileMap" type="TileMap" parent="Tiles"]
+tile_set = SubResource("TileSet_ujvyu")
+format = 2
+layer_0/tile_data = PackedInt32Array(1376252, 65536, 0, 1310720, 65536, 0, 1310723, 65536, 0, 1310727, 393216, 0, 1310731, 393216, 0, 1310735, 65536, 0, 1310739, 65536, 0, 1310743, 393216, 0, 1310747, 65536, 0, 1310751, 393216, 0, 1310755, 65536, 0, 1310759, 65536, 0, 1310763, 393216, 0, 1310767, 65536, 0, 1310771, 393216, 0)
+
+[node name="Characters" type="CanvasLayer" parent="."]
+layer = 3
+
+[node name="battlePlayer" parent="Characters" instance=ExtResource("4_ca7tq")]
+position = Vector2(90, 437)
+
+[node name="CharacterBody2D" parent="Characters" instance=ExtResource("5_uep4d")]
+position = Vector2(1023, 475)
+
+[node name="health_container" parent="Characters" instance=ExtResource("5_xxew2")]
+offset_left = 10.0
+offset_top = 10.0
+offset_right = 172.0
+offset_bottom = 54.0
+scale = Vector2(1.645, 1.645)

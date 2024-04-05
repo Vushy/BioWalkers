@@ -1,0 +1,17 @@
+[gd_resource type="Theme" load_steps=3 format=3 uid="uid://dofvwcfpx2h38"]
+
+[ext_resource type="FontFile" uid="uid://ridyc3bw3omt" path="res://FATPIXEL.TTF" id="1_ieqx8"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_p1hiu"]
+
+[resource]
+Button/colors/font_hover_color = Color(0.27451, 0.27451, 0.27451, 1)
+Button/colors/font_outline_color = Color(0.556863, 0, 0.227451, 1)
+Button/colors/font_pressed_color = Color(0.27451, 0.27451, 0.27451, 1)
+Button/colors/icon_focus_color = Color(1, 1, 1, 0)
+Button/colors/icon_hover_color = Color(1, 1, 1, 0)
+Button/colors/icon_hover_pressed_color = Color(1, 1, 1, 0)
+Button/colors/icon_normal_color = Color(1, 1, 1, 0)
+Button/colors/icon_pressed_color = Color(1, 1, 1, 0)
+Button/fonts/font = ExtResource("1_ieqx8")
+Button/styles/pressed = SubResource("StyleBoxEmpty_p1hiu")

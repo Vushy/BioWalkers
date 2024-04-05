@@ -1,0 +1,77 @@
+[gd_scene load_steps=6 format=3 uid="uid://3lu6xilxufn"]
+
+[ext_resource type="Script" path="res://script/video.gd" id="1_2lxf5"]
+[ext_resource type="Theme" uid="uid://5poy5t11unk2" path="res://new_theme.tres" id="2_bfccm"]
+
+[sub_resource type="VideoStreamTheora" id="VideoStreamTheora_5o2gd"]
+file = "res://video/respiratory.ogv"
+
+[sub_resource type="Animation" id="Animation_s0uhi"]
+resource_name = "fade_in"
+length = 4.0145
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ColorRect:self_modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(1.1, 3.9),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(0, 0, 0, 1), Color(0, 0, 0, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_foxd6"]
+_data = {
+"fade_in": SubResource("Animation_s0uhi")
+}
+
+[node name="lesson" type="Node2D"]
+position = Vector2(79, 40)
+script = ExtResource("1_2lxf5")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(579, 326)
+zoom = Vector2(0.985, 0.985)
+
+[node name="VideoStreamPlayer" type="VideoStreamPlayer" parent="."]
+offset_left = -76.0
+offset_top = -43.0
+offset_right = 1234.0
+offset_bottom = 694.0
+stream = SubResource("VideoStreamTheora_5o2gd")
+autoplay = true
+metadata/_edit_use_anchors_ = true
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer"]
+visible = false
+self_modulate = Color(0, 0, 0, 1)
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+
+[node name="transistion" type="AnimationPlayer" parent="CanvasLayer"]
+libraries = {
+"": SubResource("AnimationLibrary_foxd6")
+}
+
+[node name="RichTextLabel" type="RichTextLabel" parent="CanvasLayer"]
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -487.0
+offset_top = -76.0
+grow_horizontal = 0
+grow_vertical = 0
+theme = ExtResource("2_bfccm")
+text = "Tap to skip"
+
+[connection signal="finished" from="VideoStreamPlayer" to="." method="_on_video_stream_player_finished"]

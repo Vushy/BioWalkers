@@ -1,0 +1,33 @@
+~ start
+
+Trainer: Hi! I am the Trainer, You can ask me questions.
+set dialogueStarted = true
+- Hello, How can I play the game?
+	Trainer: Just press the Directional Button to move your chatacter and the two buttons to interact.
+	Trainer: Also talk to the guy with a suit walking ahead and he will give you lessons.
+	Trainer: That's all! Enjoy.	
+	set dialogueFinished = true
+	=> END!
+- Hello, Nice to meet you!
+	Trainer: Nice to meet you too! Enjoy your journey in this game. 
+	set dialogueFinished = true
+	Trainer: That's all! Enjoy.	
+	=> END!
+	
+=> END
+
+~ video_lesson
+
+
+
+LEO: [[Hi|Hello|Howdy]], Are you ready for the lesson?
+set dialogueStarted = true
+if play == false:
+	- Yes
+		set play = true
+		LEO: Okay! Here we go.
+		set dialogueFinished = true
+	- No
+		set dialogueFinished = true
+		LEO: Sure take your time just come back later!
+=> END

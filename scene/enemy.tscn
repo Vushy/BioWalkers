@@ -1,0 +1,89 @@
+[gd_scene load_steps=9 format=3 uid="uid://bdg31y6mbhsja"]
+
+[ext_resource type="Script" path="res://script/enemy.gd" id="1_f50sx"]
+[ext_resource type="Texture2D" uid="uid://bvufk5m6javr4" path="res://art/characters/enemy/Sprite-0005-Sheet.png" id="1_mx71k"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_jx8fb"]
+radius = 6.08276
+
+[sub_resource type="Animation" id="Animation_wiwjw"]
+length = 0.4
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3]
+}
+
+[sub_resource type="Animation" id="Animation_7lu46"]
+resource_name = "idle"
+length = 0.7
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.4, 0.6),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_lekvh"]
+_data = {
+"RESET": SubResource("Animation_wiwjw"),
+"idle": SubResource("Animation_7lu46")
+}
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_rhkji"]
+radius = 42.19
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_cpk34"]
+
+[node name="enemy" type="CharacterBody2D"]
+motion_mode = 1
+wall_min_slide_angle = 0.0
+script = ExtResource("1_f50sx")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 1)
+shape = SubResource("CircleShape2D_jx8fb")
+debug_color = Color(0, 0, 0, 0.419608)
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(0, -1)
+texture = ExtResource("1_mx71k")
+hframes = 4
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_lekvh")
+}
+
+[node name="detection_area" type="Area2D" parent="."]
+collision_layer = 2
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="detection_area"]
+position = Vector2(0, 1)
+shape = SubResource("CircleShape2D_rhkji")
+debug_color = Color(0.513726, 0.423529, 1, 0.419608)
+
+[node name="battle_activate" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="battle_activate"]
+shape = SubResource("CircleShape2D_cpk34")
+debug_color = Color(1, 1, 1, 0.419608)
+
+[connection signal="body_entered" from="detection_area" to="." method="_on_detection_area_body_entered"]
+[connection signal="body_exited" from="detection_area" to="." method="_on_detection_area_body_exited"]
+[connection signal="body_entered" from="battle_activate" to="." method="_on_battle_activate_body_entered"]

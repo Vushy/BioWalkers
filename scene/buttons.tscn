@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=3 uid="uid://osi8a4olof4g"]
+
+[ext_resource type="Texture2D" uid="uid://io46xwafmwl1" path="res://art/touchpad/abutton.png" id="1_w45mr"]
+[ext_resource type="Texture2D" uid="uid://dhxrn26yk3hmo" path="res://art/touchpad/abutton1.png" id="2_u68pt"]
+
+[node name="buttons" type="HBoxContainer"]
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Sprite2D" type="TouchScreenButton" parent="."]
+scale = Vector2(8.39, 8.39)
+texture_normal = ExtResource("1_w45mr")
+texture_pressed = ExtResource("2_u68pt")
+action = "chat"

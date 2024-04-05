@@ -1,0 +1,403 @@
+[gd_resource type="Resource" script_class="DialogueResource" load_steps=2 format=3]
+
+[ext_resource type="Script" path="res://addons/dialogue_manager/dialogue_resource.gd" id="1_81bsx"]
+
+[resource]
+script = ExtResource("1_81bsx")
+using_states = PackedStringArray()
+titles = {
+"start": "3",
+"video_lesson": "23"
+}
+character_names = PackedStringArray("Trainer", "LEO")
+first_title = "3"
+lines = {
+"1": {
+"id": "1",
+"next_id": "3",
+"text": "start",
+"type": "title"
+},
+"10": {
+"id": "10",
+"is_snippet": false,
+"next_id": "end!",
+"parent_id": "5",
+"type": "goto"
+},
+"11": {
+"character": "",
+"character_replacements": Array[Dictionary]([]),
+"id": "11",
+"next_id": "12",
+"next_id_after": "17",
+"notes": "",
+"tags": PackedStringArray(),
+"text": "Hello, Nice to meet you!",
+"text_replacements": Array[Dictionary]([]),
+"translation_key": "Hello, Nice to meet you!",
+"type": "response"
+},
+"12": {
+"character": "Trainer",
+"character_replacements": Array[Dictionary]([]),
+"id": "12",
+"next_id": "13",
+"notes": "",
+"parent_id": "11",
+"tags": PackedStringArray(),
+"text": "Nice to meet you too! Enjoy your journey in this game.",
+"text_replacements": Array[Dictionary]([]),
+"translation_key": "Nice to meet you too! Enjoy your journey in this game.",
+"type": "dialogue"
+},
+"13": {
+"id": "13",
+"mutation": {
+"expression": Array[Dictionary]([{
+"type": "variable",
+"value": "dialogueFinished"
+}, {
+"type": "assignment",
+"value": "="
+}, {
+"type": "variable",
+"value": "true"
+}])
+},
+"next_id": "14",
+"parent_id": "11",
+"type": "mutation"
+},
+"14": {
+"character": "Trainer",
+"character_replacements": Array[Dictionary]([]),
+"id": "14",
+"next_id": "15",
+"notes": "",
+"parent_id": "11",
+"tags": PackedStringArray(),
+"text": "That's all! Enjoy.",
+"text_replacements": Array[Dictionary]([]),
+"translation_key": "That's all! Enjoy.",
+"type": "dialogue"
+},
+"15": {
+"id": "15",
+"is_snippet": false,
+"next_id": "end!",
+"parent_id": "11",
+"type": "goto"
+},
+"17": {
+"id": "17",
+"is_snippet": false,
+"next_id": "end",
+"type": "goto"
+},
+"19": {
+"id": "19",
+"next_id": "23",
+"text": "video_lesson",
+"type": "title"
+},
+"23": {
+"character": "LEO",
+"character_replacements": Array[Dictionary]([]),
+"id": "23",
+"next_id": "24",
+"notes": "",
+"tags": PackedStringArray(),
+"text": "[[Hi|Hello|Howdy]], Are you ready for the lesson?",
+"text_replacements": Array[Dictionary]([]),
+"translation_key": "[[Hi|Hello|Howdy]], Are you ready for the lesson?",
+"type": "dialogue"
+},
+"24": {
+"id": "24",
+"mutation": {
+"expression": Array[Dictionary]([{
+"type": "variable",
+"value": "dialogueStarted"
+}, {
+"type": "assignment",
+"value": "="
+}, {
+"type": "variable",
+"value": "true"
+}])
+},
+"next_id": "25",
+"type": "mutation"
+},
+"25": {
+"condition": {
+"expression": Array[Dictionary]([{
+"type": "variable",
+"value": "play"
+}, {
+"type": "comparison",
+"value": "=="
+}, {
+"type": "variable",
+"value": "false"
+}, {
+"type": "colon"
+}])
+},
+"id": "25",
+"next_conditional_id": "33",
+"next_id": "26",
+"next_id_after": "33",
+"type": "condition"
+},
+"26": {
+"character": "",
+"character_replacements": Array[Dictionary]([]),
+"id": "26",
+"next_id": "27",
+"next_id_after": "33",
+"notes": "",
+"parent_id": "25",
+"responses": PackedStringArray("26", "30"),
+"tags": PackedStringArray(),
+"text": "Yes",
+"text_replacements": Array[Dictionary]([]),
+"translation_key": "Yes",
+"type": "response"
+},
+"27": {
+"id": "27",
+"mutation": {
+"expression": Array[Dictionary]([{
+"type": "variable",
+"value": "play"
+}, {
+"type": "assignment",
+"value": "="
+}, {
+"type": "variable",
+"value": "true"
+}])
+},
+"next_id": "28",
+"parent_id": "26",
+"type": "mutation"
+},
+"28": {
+"character": "LEO",
+"character_replacements": Array[Dictionary]([]),
+"id": "28",
+"next_id": "29",
+"notes": "",
+"parent_id": "26",
+"tags": PackedStringArray(),
+"text": "Okay! Here we go.",
+"text_replacements": Array[Dictionary]([]),
+"translation_key": "Okay! Here we go.",
+"type": "dialogue"
+},
+"29": {
+"id": "29",
+"mutation": {
+"expression": Array[Dictionary]([{
+"type": "variable",
+"value": "dialogueFinished"
+}, {
+"type": "assignment",
+"value": "="
+}, {
+"type": "variable",
+"value": "true"
+}])
+},
+"next_id": "33",
+"parent_id": "26",
+"type": "mutation"
+},
+"3": {
+"character": "Trainer",
+"character_replacements": Array[Dictionary]([]),
+"id": "3",
+"next_id": "4",
+"notes": "",
+"tags": PackedStringArray(),
+"text": "Hi! I am the Trainer, You can ask me questions.",
+"text_replacements": Array[Dictionary]([]),
+"translation_key": "Hi! I am the Trainer, You can ask me questions.",
+"type": "dialogue"
+},
+"30": {
+"character": "",
+"character_replacements": Array[Dictionary]([]),
+"id": "30",
+"next_id": "31",
+"next_id_after": "33",
+"notes": "",
+"parent_id": "25",
+"tags": PackedStringArray(),
+"text": "No",
+"text_replacements": Array[Dictionary]([]),
+"translation_key": "No",
+"type": "response"
+},
+"31": {
+"id": "31",
+"mutation": {
+"expression": Array[Dictionary]([{
+"type": "variable",
+"value": "dialogueFinished"
+}, {
+"type": "assignment",
+"value": "="
+}, {
+"type": "variable",
+"value": "true"
+}])
+},
+"next_id": "32",
+"parent_id": "30",
+"type": "mutation"
+},
+"32": {
+"character": "LEO",
+"character_replacements": Array[Dictionary]([]),
+"id": "32",
+"next_id": "33",
+"notes": "",
+"parent_id": "30",
+"tags": PackedStringArray(),
+"text": "Sure take your time just come back later!",
+"text_replacements": Array[Dictionary]([]),
+"translation_key": "Sure take your time just come back later!",
+"type": "dialogue"
+},
+"33": {
+"id": "33",
+"is_snippet": false,
+"next_id": "end",
+"type": "goto"
+},
+"4": {
+"id": "4",
+"mutation": {
+"expression": Array[Dictionary]([{
+"type": "variable",
+"value": "dialogueStarted"
+}, {
+"type": "assignment",
+"value": "="
+}, {
+"type": "variable",
+"value": "true"
+}])
+},
+"next_id": "5",
+"type": "mutation"
+},
+"5": {
+"character": "",
+"character_replacements": Array[Dictionary]([]),
+"id": "5",
+"next_id": "6",
+"next_id_after": "17",
+"notes": "",
+"responses": PackedStringArray("5", "11"),
+"tags": PackedStringArray(),
+"text": "Hello, How can I play the game?",
+"text_replacements": Array[Dictionary]([]),
+"translation_key": "Hello, How can I play the game?",
+"type": "response"
+},
+"6": {
+"character": "Trainer",
+"character_replacements": Array[Dictionary]([]),
+"id": "6",
+"next_id": "7",
+"notes": "",
+"parent_id": "5",
+"tags": PackedStringArray(),
+"text": "Just press the Directional Button to move your chatacter and the two buttons to interact.",
+"text_replacements": Array[Dictionary]([]),
+"translation_key": "Just press the Directional Button to move your chatacter and the two buttons to interact.",
+"type": "dialogue"
+},
+"7": {
+"character": "Trainer",
+"character_replacements": Array[Dictionary]([]),
+"id": "7",
+"next_id": "8",
+"notes": "",
+"parent_id": "5",
+"tags": PackedStringArray(),
+"text": "Also talk to the guy with a suit walking ahead and he will give you lessons.",
+"text_replacements": Array[Dictionary]([]),
+"translation_key": "Also talk to the guy with a suit walking ahead and he will give you lessons.",
+"type": "dialogue"
+},
+"8": {
+"character": "Trainer",
+"character_replacements": Array[Dictionary]([]),
+"id": "8",
+"next_id": "9",
+"notes": "",
+"parent_id": "5",
+"tags": PackedStringArray(),
+"text": "That's all! Enjoy.",
+"text_replacements": Array[Dictionary]([]),
+"translation_key": "That's all! Enjoy.",
+"type": "dialogue"
+},
+"9": {
+"id": "9",
+"mutation": {
+"expression": Array[Dictionary]([{
+"type": "variable",
+"value": "dialogueFinished"
+}, {
+"type": "assignment",
+"value": "="
+}, {
+"type": "variable",
+"value": "true"
+}])
+},
+"next_id": "10",
+"parent_id": "5",
+"type": "mutation"
+}
+}
+raw_text = "~ start
+
+Trainer: Hi! I am the Trainer, You can ask me questions.
+set dialogueStarted = true
+- Hello, How can I play the game?
+	Trainer: Just press the Directional Button to move your chatacter and the two buttons to interact.
+	Trainer: Also talk to the guy with a suit walking ahead and he will give you lessons.
+	Trainer: That's all! Enjoy.	
+	set dialogueFinished = true
+	=> END!
+- Hello, Nice to meet you!
+	Trainer: Nice to meet you too! Enjoy your journey in this game. 
+	set dialogueFinished = true
+	Trainer: That's all! Enjoy.	
+	=> END!
+	
+=> END
+
+~ video_lesson
+
+
+
+LEO: [[Hi|Hello|Howdy]], Are you ready for the lesson?
+set dialogueStarted = true
+if play == false:
+	- Yes
+		set play = true
+		LEO: Okay! Here we go.
+		set dialogueFinished = true
+	- No
+		set dialogueFinished = true
+		LEO: Sure take your time just come back later!
+=> END"
+metadata/dialogue_manager_version = "2.36.0"
