@@ -22,8 +22,9 @@ var dialogueStarted = false
 var game_first_loadin = true
 
 #battle scenes variable
-
-
+var answerCorrect = false
+var attack = false
+var moving = false
 
 
 func set_player_position(position):

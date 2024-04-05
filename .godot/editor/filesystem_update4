@@ -1,4 +1,6 @@
 res://scene/battle.tscn
-res://scene/enemy_slime_battle.tscn
-res://scene/battle_player.tscn
 res://global.gd
+res://scene/battle_player.tscn
+res://script/battle_player.gd
+res://script/battle.gd
+res://scene/enemy_slime_battle.tscn
