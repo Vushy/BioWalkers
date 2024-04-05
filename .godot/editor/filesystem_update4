@@ -1,6 +1,4 @@
 res://scene/battle.tscn
-res://scene/question_panel.tscn
-res://script/question_panel.gd
-res://script/battle.gd
 res://panel.tres
 res://battle.tres
+res://script/battle.gd

@@ -1,0 +1,105 @@
+{
+	"Questions": [
+	  {
+		"question": "What is the main function of the respiratory system?",
+		"choices": [
+		  "a) Digestion",
+		  "b) Transportation of oxygen",
+		  "c) Regulation of body temperature",
+		  "d) Movement of muscles"
+		],
+		"answer": "b) Transportation of oxygen"
+	  },
+	  {
+		"question": "Which organ is responsible for the exchange of oxygen and carbon dioxide in the respiratory system?",
+		"choices": [
+		  "a) Lungs",
+		  "b) Liver",
+		  "c) Stomach",
+		  "d) Kidneys"
+		],
+		"answer": "a) Lungs"
+	  },
+	  {
+		"question": "What muscle helps in the process of breathing by contracting and relaxing?",
+		"choices": [
+		  "a) Biceps",
+		  "b) Quadriceps",
+		  "c) Diaphragm",
+		  "d) Abdominals"
+		],
+		"answer": "c) Diaphragm"
+	  },
+	  {
+		"question": "Air enters the body through which of the following structures?",
+		"choices": [
+		  "a) Trachea",
+		  "b) Esophagus",
+		  "c) Urethra",
+		  "d) Rectum"
+		],
+		"answer": "a) Trachea"
+	  },
+	  {
+		"question": "Which part of the respiratory system is responsible for warming and moistening the air we breathe?",
+		"choices": [
+		  "a) Bronchi",
+		  "b) Lungs",
+		  "c) Nasal cavity",
+		  "d) Pharynx"
+		],
+		"answer": "c) Nasal cavity"
+	  },
+	  {
+		"question": "The exchange of gases (oxygen and carbon dioxide) in the lungs occurs in the:",
+		"choices": [
+		  "a) Alveoli",
+		  "b) Bronchioles",
+		  "c) Trachea",
+		  "d) Bronchi"
+		],
+		"answer": "a) Alveoli"
+	  },
+	  {
+		"question": "Which of the following is NOT a common respiratory disorder?",
+		"choices": [
+		  "a) Asthma",
+		  "b) Bronchitis",
+		  "c) Malaria",
+		  "d) Pneumonia"
+		],
+		"answer": "c) Malaria"
+	  },
+	  {
+		"question": "What are tiny hair-like structures in the respiratory tract that help to trap and remove dust particles and pathogens?",
+		"choices": [
+		  "a) Alveoli",
+		  "b) Villi",
+		  "c) Cilia",
+		  "d) Alveolus"
+		],
+		"answer": "c) Cilia"
+	  },
+	  {
+		"question": "What is the harmful effect of smoking on the respiratory system?",
+		"choices": [
+		  "a) Increases lung capacity",
+		  "b) Reduces the risk of lung cancer",
+		  "c) Damages the cilia in the airways",
+		  "d) Improves oxygen intake"
+		],
+		"answer": "c) Damages the cilia in the airways"
+	  },
+	  {
+		"question": "During physical activity, the respiratory rate:",
+		"choices": [
+		  "a) Decreases",
+		  "b) Remains constant",
+		  "c) Increases",
+		  "d) Stops"
+		],
+		"answer": "c) Increases"
+	  }
+	]
+  }
+  

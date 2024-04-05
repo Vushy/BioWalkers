@@ -21,9 +21,9 @@ aseprite_executable_path="C:/Users/Rosalia Dignos/Downloads/Aseprite.v1.3.rc4/As
 
 [autoload]
 
-DialogueManager="*res://addons/dialogue_manager/dialogue_manager.gd"
 global="*res://global.gd"
 state="*res://script/state.gd"
+DialogueManager="*res://addons/dialogue_manager/dialogue_manager.gd"
 
 [dialogue_manager]
 
