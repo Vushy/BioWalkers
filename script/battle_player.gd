@@ -1,10 +1,14 @@
 extends CharacterBody2D
-
-
+@onready var characterAnim = $charAnim
+@export var speed = 300
+var idle = true
 
 func _ready():
-	$AnimatedSprite2D.play("idle")
-
+	if idle == true:
+		characterAnim.play("idle")
+		
 
 func _physics_process(delta):
-	pass
+	if global.answerCorrect == true:
+		characterAnim.play("run")
+		

@@ -1,21 +1,21 @@
 ae984314092e0777480b76e2f0857c74
-::res://::1712380217
+::res://::1712393960
 battle.tres::StyleBoxTexture::939096243669312920::1712379542::0::1::::<><>::uid://cnrc1hq00hry::::res://art/panel/panel-transparent-center-015.png
 BMRIA___.TTF::FontFile::1886471732709545312::1710417244::1710417244::1::::<><>::
 easvhs.ttf::FontFile::4782038606802126502::1710402577::1710402620::1::::<><>::
 export_presets.cfg::TextFile::-1::1712323763::0::1::::<><>::
 FATPIXEL.TTF::FontFile::1209950522288221507::1710417758::1710417758::1::::<><>::
 Freedom-nZ4J.otf::FontFile::2197308093486596182::1710417666::1710417667::1::::<><>::
-global.gd::GDScript::-1::1712287358::0::1::::<>Node<>::
+global.gd::GDScript::-1::1712393960::0::1::::<>Node<>::
 Idle.png::CompressedTexture2D::8971288591937080204::1711693028::1711692680::1::::<><>::
 main.dialogue::Resource::3199509066775245336::1711813464::1711813465::1::::<><>::
-new_theme1.tres::Theme::8153542208580118621::1711867327::0::1::::<><>::uid://ridyc3bw3omt::::res://FATPIXEL.TTF
-new_theme.tres::Theme::2137525478672971619::1710417830::0::1::::<><>::uid://ridyc3bw3omt::::res://FATPIXEL.TTF
+new_theme1.tres::Theme::8153542208580118621::1712381436::0::1::::<><>::uid://caepqhvpo3wha::::res://easvhs.ttf
+new_theme.tres::Theme::2137525478672971619::1712381436::0::1::::<><>::uid://ridyc3bw3omt::::res://FATPIXEL.TTF<>uid://6knlw23yj6vi::::res://Freedom-nZ4J.otf
 panel.tres::Theme::6535985833415726400::1712379542::0::1::::<><>::uid://cnrc1hq00hry::::res://art/panel/panel-transparent-center-015.png<>uid://caepqhvpo3wha::::res://easvhs.ttf
 questions.dialogue::Resource::149866695926526836::1712290135::1712290135::1::::<><>::
 README.md::TextFile::-1::1711692854::0::1::::<><>::
 README.ru.md::TextFile::-1::1711692854::0::1::::<><>::
-tileset1.tres::TileSet::3098622431973707754::1712324236::0::1::::<><>::uid://s0l8n3vhxs13::::res://art/tileset/plains.png<>uid://21lqc53fjhin::::res://art/tileset/grass.png<>uid://dxa60efmyjbjw::::res://art/objects/objects.png<>uid://g5860yreio5i::::res://art/tileset/Forest Props.png<>uid://qwj5rxipg3tr::::res://art/tileset/Settlement.png<>uid://gtrfo6f533v3::::res://art/tileset/Water Tileset.png<>uid://bii0ng8fsuugp::::res://art/tileset/Forest Tilesett.png
+tileset1.tres::TileSet::3098622431973707754::1712384185::0::1::::<><>::uid://s0l8n3vhxs13::::res://art/tileset/plains.png<>uid://21lqc53fjhin::::res://art/tileset/grass.png<>uid://dxa60efmyjbjw::::res://art/objects/objects.png<>uid://g5860yreio5i::::res://art/tileset/Forest Props.png<>uid://qwj5rxipg3tr::::res://art/tileset/Settlement.png<>uid://gtrfo6f533v3::::res://art/tileset/Water Tileset.png<>uid://bii0ng8fsuugp::::res://art/tileset/Forest Tilesett.png
 WeirdScienceNbpRegular-qmBr.ttf::FontFile::7790139156874074::1710417677::1710417677::1::::<><>::
 ::res://addons/::1712310657
 ::res://addons/AsepriteWizard/::1712285398
@@ -166,7 +166,7 @@ gdb-switch-2.png::CompressedTexture2D::1353190474953952301::1711641760::17116417
 Heart.png::CompressedTexture2D::677989814092761209::1711638041::1711638041::1::::<><>::
 icon.svg::CompressedTexture2D::6342706486904041642::1710248358::1710296496::1::::<><>::
 icons_xbox_animated-Sheet.png::CompressedTexture2D::4574528339499067994::1711642643::1711642643::1::::<><>::
-::res://art/backgrounds/::1712381041
+::res://art/backgrounds/::1712381042
 1e1a04d1-bc9b-464f-8d26-00789da64a7a.webp::CompressedTexture2D::991250615585911181::1712381041::1712381042::1::::<><>::
 back.png::CompressedTexture2D::7748447561873566640::1711726980::1711726981::1::::<><>::
 middle.png::CompressedTexture2D::8429713172814141037::1711726980::1711726981::1::::<><>::
@@ -178,35 +178,37 @@ tiles.png::CompressedTexture2D::7626113007310304531::1711726980::1711726981::1::
 429985697_1702591040149510_8024645732444867949_n.png::CompressedTexture2D::7683108198753982002::1710415858::1710415858::1::::<><>::
 player.png::CompressedTexture2D::4783685789969346301::1710296209::1710296492::1::::<><>::
 Red DefaultCharacter-Idle.png::CompressedTexture2D::944354255619428247::1710389511::1710389521::1::::<><>::
-::res://art/characters/battleCharacter/::1712285395
+::res://art/characters/battleCharacter/::1712395198
 Attack-01-Sheet.png::CompressedTexture2D::3253692182422182015::1711765405::1711765406::1::::<><>::
+Compiled-Spritesheet.png::CompressedTexture2D::4585875025111439260::1712395198::1712395198::1::::<><>::
 Dead-Sheet.png::CompressedTexture2D::1713248853496707242::1711728891::1711728891::1::::<><>::
 Idle-Sheet.png::CompressedTexture2D::3035195483617556685::1711766894::1711766894::1::::<><>::
 Run-Sheet.png::CompressedTexture2D::5016043483913160884::1711766905::1711777880::1::::<><>::
 ::res://art/characters/enemy/::1712285395
 Sprite-0005-Sheet.png::CompressedTexture2D::3901996993734565283::1711694016::1711694022::1::::<><>::
-::res://art/characters/enemy/battle enemy/::1712285396
-slime-attack-0.png::CompressedTexture2D::6639268688877618442::1711819489::1711819489::1::::<><>::
+::res://art/characters/enemy/battle enemy/::1712398397
+slime-attack-0.png::CompressedTexture2D::6639268688877618442::1712397848::1712397850::1::::<><>::
 slime-attack-1.png::CompressedTexture2D::3028481966355542683::1711819489::1711819489::1::::<><>::
 slime-attack-2.png::CompressedTexture2D::3455136704335428198::1711819489::1711819489::1::::<><>::
 slime-attack-3.png::CompressedTexture2D::5598238908450657532::1711819489::1711819489::1::::<><>::
 slime-attack-4.png::CompressedTexture2D::1156232849772034620::1711819489::1711819489::1::::<><>::
-slime-die-0.png::CompressedTexture2D::4130576571858435362::1711819489::1711819489::1::::<><>::
+slime-die-0.png::CompressedTexture2D::4130576571858435362::1712398524::1712398529::1::::<><>::
 slime-die-1.png::CompressedTexture2D::2982386451938634222::1711819489::1711819489::1::::<><>::
 slime-die-2.png::CompressedTexture2D::51344783151296389::1711819489::1711819489::1::::<><>::
 slime-die-3.png::CompressedTexture2D::3582233746646033285::1711819489::1711819489::1::::<><>::
-slime-hurt-0.png::CompressedTexture2D::5970864580622412824::1711819489::1711819489::1::::<><>::
+slime-hurt-0.png::CompressedTexture2D::5970864580622412824::1712398464::1712398529::1::::<><>::
 slime-hurt-1.png::CompressedTexture2D::7129716277454960905::1711819489::1711819489::1::::<><>::
 slime-hurt-2.png::CompressedTexture2D::4192813725907892947::1711819489::1711819489::1::::<><>::
 slime-hurt-3.png::CompressedTexture2D::8979943078766093217::1711819489::1711819489::1::::<><>::
-slime-idle-0.png::CompressedTexture2D::1518995511977043669::1711819489::1711819489::1::::<><>::
+slime-idle-0.png::CompressedTexture2D::1518995511977043669::1712398087::1712398089::1::::<><>::
 slime-idle-1.png::CompressedTexture2D::5123979239297770222::1711819489::1711819489::1::::<><>::
 slime-idle-2.png::CompressedTexture2D::2310557366454459643::1711819489::1711819489::1::::<><>::
 slime-idle-3.png::CompressedTexture2D::4204145768155869620::1711819489::1711819489::1::::<><>::
-slime-move-0.png::CompressedTexture2D::7675042429146219680::1711819489::1711819489::1::::<><>::
+slime-move-0.png::CompressedTexture2D::7675042429146219680::1712398403::1712398396::1::::<><>::
 slime-move-1.png::CompressedTexture2D::3168845750349228734::1711819489::1711819489::1::::<><>::
 slime-move-2.png::CompressedTexture2D::6565470733616184193::1711819489::1711819489::1::::<><>::
 slime-move-3.png::CompressedTexture2D::2734412591577432508::1711819489::1711819489::1::::<><>::
+Sprite-0001.ase::PackedDataContainer::4218860657848386748::1712397831::1712397833::1::::<><>::
 ::res://art/characters/NPC/::1712285396
 Attack.png::CompressedTexture2D::2965570593726834046::1711784992::1711784992::1::::<><>::
 Dead.png::CompressedTexture2D::165605353330590481::1711784992::1711784992::1::::<><>::
@@ -246,29 +248,29 @@ dialogue_NPC.gd::GDScript::-1::1711687254::0::1::::<>Control<>::
 oldman_npc.json::JSON::-1::1711687254::0::1::::<><>::
 ::res://questions/::1712309115
 questions.json::JSON::-1::1712309115::0::1::::<><>::
-::res://scene/::1712379893
-battle.tscn::PackedScene::5521836920771985640::1712379893::0::1::::<><>::res://script/battle.gd<>uid://dinn2f7758p5q::::res://art/backgrounds/back.png<>uid://dsdoe546ebi8d::::res://art/backgrounds/middle.png<>uid://dgwe745ufufxb::::res://art/backgrounds/tiles.png<>uid://526qc71gu75i::::res://scene/battle_player.tscn<>uid://dp2m2o5lnbyke::::res://scene/enemy_slime_battle.tscn<>uid://81r51837d822::::res://scene/health.tscn<>uid://c0ecy458b6m0w::::res://panel.tres<>uid://caepqhvpo3wha::::res://easvhs.ttf<>uid://nm51pj0jglj1::::res://battle.tres
-battle_player.tscn::PackedScene::2163314463649428932::1712287633::0::1::::<><>::res://script/battle_player.gd<>uid://bmmd3nd5lpstj::::res://art/characters/battleCharacter/Attack-01-Sheet.png<>uid://yn57t2l470kc::::res://art/characters/battleCharacter/Dead-Sheet.png<>uid://bjijhxpj4q3fd::::res://art/characters/battleCharacter/Idle-Sheet.png<>uid://cdp2rd305it6k::::res://art/characters/battleCharacter/Run-Sheet.png
+::res://scene/::1712396787
+battle.tscn::PackedScene::5521836920771985640::1712396787::0::1::::<><>::res://script/battle.gd<>uid://dinn2f7758p5q::::res://art/backgrounds/back.png<>uid://dsdoe546ebi8d::::res://art/backgrounds/middle.png<>uid://dgwe745ufufxb::::res://art/backgrounds/tiles.png<>uid://526qc71gu75i::::res://scene/battle_player.tscn<>uid://dp2m2o5lnbyke::::res://scene/enemy_slime_battle.tscn<>uid://81r51837d822::::res://scene/health.tscn<>uid://c0ecy458b6m0w::::res://panel.tres<>uid://caepqhvpo3wha::::res://easvhs.ttf<>uid://nm51pj0jglj1::::res://battle.tres
+battle_player.tscn::PackedScene::2163314463649428932::1712396787::0::1::::<><>::res://script/battle_player.gd<>uid://bmmd3nd5lpstj::::res://art/characters/battleCharacter/Attack-01-Sheet.png<>uid://yn57t2l470kc::::res://art/characters/battleCharacter/Dead-Sheet.png<>uid://bjijhxpj4q3fd::::res://art/characters/battleCharacter/Idle-Sheet.png<>uid://cdp2rd305it6k::::res://art/characters/battleCharacter/Run-Sheet.png
 buttons.tscn::PackedScene::1020347323097203348::1712051213::0::1::::<><>::uid://io46xwafmwl1::::res://art/touchpad/abutton.png<>uid://dhxrn26yk3hmo::::res://art/touchpad/abutton1.png
 enemy.tscn::PackedScene::2611121296566743170::1712051213::0::1::::<><>::res://script/enemy.gd<>uid://bvufk5m6javr4::::res://art/characters/enemy/Sprite-0005-Sheet.png
-enemy_slime_battle.tscn::PackedScene::8268610507546296560::1712287633::0::1::::<><>::res://script/enemy_slime_battle.gd<>uid://c1ud1x2kak27o::::res://art/characters/enemy/battle enemy/slime-attack-0.png<>uid://bjfawj1r2ka80::::res://art/characters/enemy/battle enemy/slime-attack-1.png<>uid://bphxuj2otivxu::::res://art/characters/enemy/battle enemy/slime-attack-2.png<>uid://cl03garignxma::::res://art/characters/enemy/battle enemy/slime-attack-3.png<>uid://qqc8r68vvqiu::::res://art/characters/enemy/battle enemy/slime-attack-4.png<>uid://by3480ri5ufj3::::res://art/characters/enemy/battle enemy/slime-die-0.png<>uid://biqxp7k0ch35k::::res://art/characters/enemy/battle enemy/slime-die-1.png<>uid://y4v2c5gmogb::::res://art/characters/enemy/battle enemy/slime-die-2.png<>uid://brbi4puodm17n::::res://art/characters/enemy/battle enemy/slime-die-3.png<>uid://vv2vtc2e1wh6::::res://art/characters/enemy/battle enemy/slime-idle-0.png<>uid://cfadgpac336tm::::res://art/characters/enemy/battle enemy/slime-idle-1.png<>uid://76iso3swmn7h::::res://art/characters/enemy/battle enemy/slime-idle-2.png<>uid://b05rwws2ahl8o::::res://art/characters/enemy/battle enemy/slime-idle-3.png<>uid://dhl33es5mgq6s::::res://art/characters/enemy/battle enemy/slime-move-0.png<>uid://blfaorcq4nj0q::::res://art/characters/enemy/battle enemy/slime-move-1.png<>uid://c0smlxm7xoqvx::::res://art/characters/enemy/battle enemy/slime-move-2.png<>uid://be7tm1ru1qfyy::::res://art/characters/enemy/battle enemy/slime-move-3.png
-health.tscn::PackedScene::2370992842255560717::1711782960::0::1::::<><>::uid://lb0kvbkaotjg::::res://scene/heart.tscn
-heart.tscn::PackedScene::775678545520710772::1711782960::0::1::::<><>::uid://jwonmrwafg3b::::res://art/Heart.png
+enemy_slime_battle.tscn::PackedScene::8268610507546296560::1712396787::0::1::::<><>::res://script/enemy_slime_battle.gd<>uid://c1ud1x2kak27o::::res://art/characters/enemy/battle enemy/slime-attack-0.png<>uid://bjfawj1r2ka80::::res://art/characters/enemy/battle enemy/slime-attack-1.png<>uid://bphxuj2otivxu::::res://art/characters/enemy/battle enemy/slime-attack-2.png<>uid://cl03garignxma::::res://art/characters/enemy/battle enemy/slime-attack-3.png<>uid://qqc8r68vvqiu::::res://art/characters/enemy/battle enemy/slime-attack-4.png<>uid://by3480ri5ufj3::::res://art/characters/enemy/battle enemy/slime-die-0.png<>uid://biqxp7k0ch35k::::res://art/characters/enemy/battle enemy/slime-die-1.png<>uid://y4v2c5gmogb::::res://art/characters/enemy/battle enemy/slime-die-2.png<>uid://brbi4puodm17n::::res://art/characters/enemy/battle enemy/slime-die-3.png<>uid://vv2vtc2e1wh6::::res://art/characters/enemy/battle enemy/slime-idle-0.png<>uid://cfadgpac336tm::::res://art/characters/enemy/battle enemy/slime-idle-1.png<>uid://76iso3swmn7h::::res://art/characters/enemy/battle enemy/slime-idle-2.png<>uid://b05rwws2ahl8o::::res://art/characters/enemy/battle enemy/slime-idle-3.png<>uid://dhl33es5mgq6s::::res://art/characters/enemy/battle enemy/slime-move-0.png<>uid://blfaorcq4nj0q::::res://art/characters/enemy/battle enemy/slime-move-1.png<>uid://c0smlxm7xoqvx::::res://art/characters/enemy/battle enemy/slime-move-2.png<>uid://be7tm1ru1qfyy::::res://art/characters/enemy/battle enemy/slime-move-3.png
+health.tscn::PackedScene::2370992842255560717::1712384476::0::1::::<><>::uid://lb0kvbkaotjg::::res://scene/heart.tscn
+heart.tscn::PackedScene::775678545520710772::1712384476::0::1::::<><>::uid://jwonmrwafg3b::::res://art/Heart.png
 lesson_npc.tscn::PackedScene::4284124350757569634::1712051213::0::1::::<><>::res://script/lesson_npc.gd<>uid://cgsv1h81cu08o::::res://art/characters/NPC/Idle.png<>uid://bymwf3rovy221::::res://art/characters/NPC/Walk.png
-MainMenu.gd::GDScript::-1::1711821274::0::1::::<>Node2D<>::
-MainMenu.tscn::PackedScene::2496533514072444704::1711783278::0::1::::<><>::res://scene/MainMenu.gd<>uid://dhp0w07ydnsj7::::res://art/characters/429985697_1702591040149510_8024645732444867949_n.png<>uid://dofvwcfpx2h38::::res://new_theme1.tres<>uid://5poy5t11unk2::::res://new_theme.tres
+MainMenu.gd::GDScript::-1::1712383133::0::1::::<>Node2D<>::
+MainMenu.tscn::PackedScene::2496533514072444704::1712383291::0::1::::<><>::res://scene/MainMenu.gd<>uid://oef0uiwas8yj::::res://art/backgrounds/1e1a04d1-bc9b-464f-8d26-00789da64a7a.webp<>uid://dofvwcfpx2h38::::res://new_theme1.tres<>uid://5poy5t11unk2::::res://new_theme.tres<>uid://caepqhvpo3wha::::res://easvhs.ttf
 NPC.tscn::PackedScene::2059779379969435232::1712051213::0::1::::<><>::res://script/NPC.gd<>uid://nppm2muof4xn::::res://art/characters/Red DefaultCharacter-Idle.png
 nworld.tscn::PackedScene::5990801854983047895::1712051213::0::1::::<><>::uid://bovex0mwcok7::::res://scene/player.tscn<>uid://cpq5yjdwtbir7::::res://scene/touchpad_direction.tscn<>uid://bke84gx6pjh43::::res://tileset1.tres<>uid://81r51837d822::::res://scene/health.tscn<>res://script/nworld.gd<>uid://osi8a4olof4g::::res://scene/buttons.tscn<>uid://bdg31y6mbhsja::::res://scene/enemy.tscn
-player.tscn::PackedScene::100373579450467932::1712379893::0::1::::<><>::res://script/player.gd<>uid://cafiuuun4c2l2::::res://art/characters/player.png<>uid://w5li6yt5keyg::::res://sfx/GRASS - Walk 4.wav
+player.tscn::PackedScene::100373579450467932::1712383291::0::1::::<><>::res://script/player.gd<>uid://cafiuuun4c2l2::::res://art/characters/player.png<>uid://w5li6yt5keyg::::res://sfx/GRASS - Walk 4.wav
 question_panel.tscn::PackedScene::3538951672039631411::1712296975::0::1::::<><>::res://script/question_panel.gd<>uid://cnrc1hq00hry::::res://art/panel/panel-transparent-center-015.png
-touchpad_direction.tscn::PackedScene::5860568913227939130::1712379893::0::1::::<><>::uid://cly1qe030qbf::::res://art/touchpad/down.png<>uid://bmpb2ygmdhdwv::::res://art/touchpad/left.png<>uid://dj3ca0fvotmfe::::res://art/touchpad/right.png<>uid://cxcan6ckxxy4y::::res://art/touchpad/up.png
+touchpad_direction.tscn::PackedScene::5860568913227939130::1712383291::0::1::::<><>::uid://cly1qe030qbf::::res://art/touchpad/down.png<>uid://bmpb2ygmdhdwv::::res://art/touchpad/left.png<>uid://dj3ca0fvotmfe::::res://art/touchpad/right.png<>uid://cxcan6ckxxy4y::::res://art/touchpad/up.png
 video.tscn::PackedScene::58507844045669167::1712051213::0::1::::<><>::res://script/video.gd<>uid://5poy5t11unk2::::res://new_theme.tres
-world.tscn::PackedScene::6131383452115439870::1712051213::0::1::::<><>::res://script/world.gd<>uid://bke84gx6pjh43::::res://tileset1.tres<>uid://bovex0mwcok7::::res://scene/player.tscn<>uid://4l1ja4je440s::::res://scene/NPC.tscn<>uid://cpq5yjdwtbir7::::res://scene/touchpad_direction.tscn<>uid://81r51837d822::::res://scene/health.tscn<>uid://b2bi5w4wiyj1k::::res://scene/lesson_npc.tscn<>uid://osi8a4olof4g::::res://scene/buttons.tscn
-::res://script/::1712323092
-battle.gd::GDScript::-1::1712323092::0::1::::<>Node2D<>::
-battle_player.gd::GDScript::-1::1712287425::0::1::::<>CharacterBody2D<>::
+world.tscn::PackedScene::6131383452115439870::1712384476::0::1::::<><>::res://script/world.gd<>uid://bke84gx6pjh43::::res://tileset1.tres<>uid://bovex0mwcok7::::res://scene/player.tscn<>uid://4l1ja4je440s::::res://scene/NPC.tscn<>uid://cpq5yjdwtbir7::::res://scene/touchpad_direction.tscn<>uid://81r51837d822::::res://scene/health.tscn<>uid://b2bi5w4wiyj1k::::res://scene/lesson_npc.tscn<>uid://osi8a4olof4g::::res://scene/buttons.tscn
+::res://script/::1712396490
+battle.gd::GDScript::-1::1712384725::0::1::::<>Node2D<>::
+battle_player.gd::GDScript::-1::1712396490::0::1::::<>CharacterBody2D<>::
 enemy.gd::GDScript::-1::1711821220::0::1::::<>CharacterBody2D<>::
-enemy_slime_battle.gd::GDScript::-1::1711819802::0::1::::<>CharacterBody2D<>::
+enemy_slime_battle.gd::GDScript::-1::1712392213::0::1::::<>CharacterBody2D<>::
 lesson_npc.gd::GDScript::-1::1711807431::0::1::::<>CharacterBody2D<>::
 NPC.gd::GDScript::-1::1711687254::0::1::::<>CharacterBody2D<>::
 nworld.gd::GDScript::-1::1711821802::0::1::::<>Node2D<>::
