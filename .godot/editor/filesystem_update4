@@ -3,3 +3,15 @@ res://panel.tres
 res://battle.tres
 res://scene/player.tscn
 res://scene/touchpad_direction.tscn
+res://scene/MainMenu.tscn
+res://new_theme1.tres
+res://new_theme.tres
+res://scene/MainMenu.gd
+res://script/battle.gd
+res://scene/heart.tscn
+res://scene/health.tscn
+res://tileset1.tres
+res://scene/world.tscn
+res://script/battle_player.gd
+res://scene/battle_player.tscn
+res://global.gd

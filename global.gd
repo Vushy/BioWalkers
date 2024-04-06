@@ -35,6 +35,13 @@ func get_player_position():
 	return player_pos
 
 
+func player_attack():
+	pass
+func enemy_attack():
+	pass
+
+
+
 func finish_changescene():
 	if transition_scene == true:
 		transition_scene = false

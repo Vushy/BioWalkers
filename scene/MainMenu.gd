@@ -1,11 +1,11 @@
 extends Node2D
 
 @onready var transition = $CanvasLayer/transition
-
+@onready var start = $CanvasLayer/start
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	pass # Replace with function body.
+	start.play("title_in")
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -28,4 +28,3 @@ func _on_quit_pressed():
 
 func _on_transition_animation_finished(anim_name):
 	get_tree().change_scene_to_file("res://scene/world.tscn")
-	

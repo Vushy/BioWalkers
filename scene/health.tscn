@@ -3,9 +3,9 @@
 [ext_resource type="PackedScene" uid="uid://lb0kvbkaotjg" path="res://scene/heart.tscn" id="1_igi56"]
 
 [node name="health_container" type="HBoxContainer"]
-offset_right = 97.0
-offset_bottom = 40.0
-theme_override_constants/separation = 6
+offset_right = 134.0
+offset_bottom = 44.0
+theme_override_constants/separation = -14
 
 [node name="Panel" parent="." instance=ExtResource("1_igi56")]
 layout_mode = 2

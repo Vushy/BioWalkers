@@ -7,8 +7,4 @@ func _ready():
 
 
 func _physics_process(delta):
-	if global.answerCorrect == true:
-		
-		
-		
-		return global.answerCorrect
+	pass

@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://ckw232rv124tw"]
+[gd_scene load_steps=17 format=3 uid="uid://ckw232rv124tw"]
 
 [ext_resource type="Script" path="res://script/battle.gd" id="1_gnwya"]
 [ext_resource type="Texture2D" uid="uid://dinn2f7758p5q" path="res://art/backgrounds/back.png" id="1_kjwsa"]
@@ -27,6 +27,8 @@ texture = ExtResource("3_8jsle")
 [sub_resource type="TileSet" id="TileSet_ujvyu"]
 physics_layer_0/collision_layer = 1
 sources/0 = SubResource("TileSetAtlasSource_w7qma")
+
+[sub_resource type="LabelSettings" id="LabelSettings_l1abl"]
 
 [sub_resource type="Animation" id="Animation_m6d8r"]
 length = 0.001
@@ -68,7 +70,7 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0, 0.2),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [Vector2(0, 290), Vector2(608, 290)]
+"values": [Vector2(0, 150), Vector2(608, 150)]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
@@ -121,6 +123,9 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("2_1kg6g")
+metadata/_aseprite_wizard_interface_config_ = {
+"animation_section": false
+}
 
 [node name="Tiles" type="CanvasLayer" parent="."]
 layer = 2
@@ -130,7 +135,7 @@ transform = Transform2D(1.71, 0, 0, 1.71, 0, 0)
 [node name="TileMap" type="TileMap" parent="Tiles"]
 tile_set = SubResource("TileSet_ujvyu")
 format = 2
-layer_0/tile_data = PackedInt32Array(1376252, 65536, 0, 1310720, 65536, 0, 1310723, 65536, 0, 1310727, 393216, 0, 1310731, 393216, 0, 1310735, 65536, 0, 1310739, 65536, 0, 1310743, 393216, 0, 1310747, 65536, 0, 1310751, 393216, 0, 1310755, 65536, 0, 1310759, 65536, 0, 1310763, 393216, 0, 1310767, 65536, 0, 1310771, 393216, 0)
+layer_0/tile_data = PackedInt32Array(1310720, 65536, 0, 1310723, 65536, 0, 1310727, 393216, 0, 1310731, 393216, 0, 1310735, 65536, 0, 1310739, 65536, 0, 1310743, 393216, 0, 1310747, 65536, 0, 1310751, 393216, 0, 1310755, 65536, 0, 1310759, 65536, 0, 1310763, 393216, 0, 1310767, 65536, 0, 1310771, 393216, 0, 1376252, 65536, 0)
 
 [node name="Characters" type="CanvasLayer" parent="."]
 layer = 3
@@ -151,33 +156,35 @@ scale = Vector2(1.645, 1.645)
 [node name="questionpanels" type="CanvasLayer" parent="."]
 
 [node name="Label" type="Panel" parent="questionpanels"]
-offset_left = 240.0
-offset_top = 74.0
-offset_right = 848.0
-offset_bottom = 364.0
+offset_left = 241.0
+offset_top = 93.0
+offset_right = 849.0
+offset_bottom = 383.0
 theme = ExtResource("8_by5j0")
 
 [node name="question" type="Label" parent="questionpanels/Label"]
 layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.023
-anchor_top = 0.04
-anchor_right = 0.981
-anchor_bottom = 0.969
-offset_left = 205.016
-offset_top = 112.4
-offset_right = -209.448
-offset_bottom = -140.01
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 2.0
+offset_top = 7.0
+offset_right = 2.0
+offset_bottom = -4.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_fonts/font = ExtResource("9_ucbum")
 text = "This is Some Questions"
+label_settings = SubResource("LabelSettings_l1abl")
+horizontal_alignment = 1
+autowrap_mode = 3
+justification_flags = 139
 
 [node name="ItemList" type="ItemList" parent="questionpanels"]
-offset_left = 257.0
-offset_top = 375.0
-offset_right = 836.98
-offset_bottom = 442.0
+offset_left = 253.0
+offset_top = 330.0
+offset_right = 832.98
+offset_bottom = 397.0
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_fonts/font = ExtResource("9_ucbum")
 theme_override_font_sizes/font_size = 15
