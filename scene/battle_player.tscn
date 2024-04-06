@@ -1,10 +1,13 @@
-[gd_scene load_steps=13 format=3 uid="uid://526qc71gu75i"]
+[gd_scene load_steps=14 format=3 uid="uid://526qc71gu75i"]
 
 [ext_resource type="Script" path="res://script/battle_player.gd" id="1_h53ao"]
 [ext_resource type="Texture2D" uid="uid://bmmd3nd5lpstj" path="res://art/characters/battleCharacter/Attack-01-Sheet.png" id="1_laogp"]
 [ext_resource type="Texture2D" uid="uid://yn57t2l470kc" path="res://art/characters/battleCharacter/Dead-Sheet.png" id="2_ar2sn"]
 [ext_resource type="Texture2D" uid="uid://bjijhxpj4q3fd" path="res://art/characters/battleCharacter/Idle-Sheet.png" id="2_xme6k"]
 [ext_resource type="Texture2D" uid="uid://cdp2rd305it6k" path="res://art/characters/battleCharacter/Run-Sheet.png" id="4_5gqlw"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_346hv"]
+radius = 159.013
 
 [sub_resource type="Animation" id="Animation_i31dn"]
 resource_name = "attack"
@@ -277,10 +280,16 @@ _data = {
 }
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_mbx2h"]
-radius = 105.702
+radius = 262.393
 
 [node name="battlePlayer" type="CharacterBody2D"]
+collision_layer = 5
+collision_mask = 5
 script = ExtResource("1_h53ao")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_346hv")
+debug_color = Color(0.956863, 0, 0.541176, 0.419608)
 
 [node name="charSprite" type="Sprite2D" parent="."]
 position = Vector2(-1, -8)
@@ -294,5 +303,9 @@ libraries = {
 }
 autoplay = "idle"
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+[node name="enemydetect" type="Area2D" parent="."]
+collision_layer = 4
+collision_mask = 4
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="enemydetect"]
 shape = SubResource("CircleShape2D_mbx2h")

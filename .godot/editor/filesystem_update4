@@ -17,3 +17,4 @@ res://scene/battle_player.tscn
 res://global.gd
 res://script/enemy_slime_battle.gd
 res://scene/enemy_slime_battle.tscn
+res://scene/enemy.tscn
