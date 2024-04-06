@@ -9,5 +9,5 @@ func _ready():
 
 func _physics_process(delta):
 	if global.answerCorrect == false:
-		enemyAnim.play("attack")
+		enemyAnim.play("move")
 	

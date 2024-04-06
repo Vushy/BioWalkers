@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://526qc71gu75i"]
+[gd_scene load_steps=13 format=3 uid="uid://526qc71gu75i"]
 
 [ext_resource type="Script" path="res://script/battle_player.gd" id="1_h53ao"]
 [ext_resource type="Texture2D" uid="uid://bmmd3nd5lpstj" path="res://art/characters/battleCharacter/Attack-01-Sheet.png" id="1_laogp"]
@@ -276,6 +276,9 @@ _data = {
 "run": SubResource("Animation_i31dn")
 }
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_mbx2h"]
+radius = 105.702
+
 [node name="battlePlayer" type="CharacterBody2D"]
 script = ExtResource("1_h53ao")
 
@@ -290,3 +293,6 @@ libraries = {
 "": SubResource("AnimationLibrary_romgf")
 }
 autoplay = "idle"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_mbx2h")

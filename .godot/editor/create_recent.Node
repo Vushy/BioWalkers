@@ -1,3 +1,6 @@
+CollisionShape2D
+Area2D
+AnimationTree
 AnimationPlayer
 Sprite2D
 ItemList
@@ -9,6 +12,3 @@ CanvasLayer
 Timer
 TextureRect
 CharacterBody2D
-RichTextLabel
-Button
-AnimatedSprite2D

@@ -4,7 +4,6 @@ extends Node2D
 @onready var questionLabel: Label = $questionpanels/Label/question
 var questions: Array = []
 var current_question_index = 0
-
 var start = false
 
 func _ready():
@@ -16,6 +15,7 @@ func _ready():
 func _process(delta: float) -> void:
 	if start:
 		$anim.play('start')
+		
 	start = false
 
 func load_questions() -> void:
@@ -49,9 +49,11 @@ func _on_choice_selected(index: int) -> void:
 	if selected_choice == questions[current_question_index]["answer"]:
 		print("Correct!")
 		global.player_attack()
+		$anim.play("move")
 		current_question_index += 1
 		display_current_question()
 	else:
 		print("Wrong")
+		$anim.play("enemyMove")
 		global.enemy_attack()
 

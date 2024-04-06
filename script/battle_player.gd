@@ -11,4 +11,5 @@ func _ready():
 func _physics_process(delta):
 	if global.answerCorrect == true:
 		characterAnim.play("run")
+		velocity.x = speed
 		

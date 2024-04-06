@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://dp2m2o5lnbyke"]
+[gd_scene load_steps=15 format=3 uid="uid://dp2m2o5lnbyke"]
 
 [ext_resource type="Script" path="res://script/enemy_slime_battle.gd" id="1_dvedf"]
 [ext_resource type="Texture2D" uid="uid://c1ud1x2kak27o" path="res://art/characters/enemy/battle enemy/slime-attack-0.png" id="1_gm534"]
@@ -330,8 +330,13 @@ _data = {
 "move": SubResource("Animation_e7hq7")
 }
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_kdtxi"]
+radius = 53.0542
+
 [node name="slime_battle" type="CharacterBody2D"]
 scale = Vector2(2.3, 2.3)
+collision_layer = 5
+collision_mask = 5
 script = ExtResource("1_dvedf")
 
 [node name="enemySprite" type="Sprite2D" parent="."]
@@ -344,3 +349,6 @@ libraries = {
 "": SubResource("AnimationLibrary_6ihht")
 }
 autoplay = "idle"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_kdtxi")
