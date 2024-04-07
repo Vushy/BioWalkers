@@ -2,12 +2,15 @@ extends Node2D
 
 
 @onready var transition = $"."/transition
-
-
+@onready var player = $player
+@onready var heartsContainer =  $CanvasLayer/HBoxContainer
 
 func _ready():
-	
 	transition.play("fade_in")
+	heartsContainer.setMaxHeart(player.maxHealth)
+	heartsContainer.updateHearts(player.Playerhealth)
+	player.healthChanged.connect(heartsContainer.updateHearts)
+	
 	
 	if global.game_first_loadin == true:
 		$player.position.y = global.player_start_pos_y

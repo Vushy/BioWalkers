@@ -235,7 +235,7 @@ offset_bottom = 54.0
 scale = Vector2(1.645, 1.645)
 
 [node name="battlePlayer" parent="Characters" instance=ExtResource("4_ca7tq")]
-position = Vector2(89, 472)
+position = Vector2(98, 484)
 
 [node name="slimebattle" parent="Characters" instance=ExtResource("5_uep4d")]
 position = Vector2(1023, 475)

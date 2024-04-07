@@ -1,10 +1,13 @@
 extends Node2D
 @onready var transition = $"."/transition
-
+@onready var player = $player
+@onready var heartsContainer =  $CanvasLayer/HBoxContainer
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	transition.play("fade_in")
-
+	heartsContainer.setMaxHeart(player.maxHealth)
+	heartsContainer.updateHearts(player.Playerhealth)
+	player.healthChanged.connect(heartsContainer.updateHearts)
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	change_scene()

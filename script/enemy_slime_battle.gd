@@ -61,6 +61,11 @@ func enemyHurt():
 func updateEnemyHealth():
 	enemyHealthbar.value -= playerDamage
 	print(enemyHealthbar.value)
+	
+func enemyDead():
+	print('the enemy is dead')
+	if enemyHealthbar.value == 0:
+		anim_tree["parameters/conditions/is_dead"]= true	
 func update_enemy_animTree():
 	if enemyIdle == true:
 		anim_tree["parameters/conditions/idle"] = true

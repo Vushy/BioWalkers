@@ -1,8 +1,8 @@
 extends CharacterBody2D
-
-
+@export var maxHealth = 3
+@onready var Playerhealth : int = maxHealth
 const SPEED = 80
-
+signal healthChanged
 var current_dir = "none"
 var NPC_IN_RANGE = false
 var lesson_npc = false

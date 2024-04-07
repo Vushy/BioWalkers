@@ -14,7 +14,7 @@ config/name="Breath of  Life"
 config/description="The Respiratory Quest"
 run/main_scene="res://scene/MainMenu.tscn"
 config/features=PackedStringArray("4.2", "Forward Plus")
-config/icon="res://art/characters/429985697_1702591040149510_8024645732444867949_n.png"
+config/icon="res://art/backgrounds/1e1a04d1-bc9b-464f-8d26-00789da64a7a.webp"
 
 [aseprite_importers]
 

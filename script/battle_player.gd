@@ -51,11 +51,11 @@ func on_player_hurt():
 	print("player hurt")
 	Playerhealth -= 1
 	
-	print_debug(maxHealth)
+	print_debug(Playerhealth)
 	healthChanged.emit(Playerhealth)
 	animation_tree["parameters/conditions/is_hurt"]= true
 	hurtTimer.start(0.7)
-	
+	playerDeath()
 	
 func player_done_hurt():
 	animation_tree["parameters/conditions/is_hurt"]= false
@@ -63,6 +63,10 @@ func player_done_hurt():
 	idle = true
 	hurtTimer.stop()
 	
+func playerDeath():
+	if Playerhealth == 0:
+		print('player Dead')
+		animation_tree["parameters/conditions/is_dead"]= true
 func update_param():
 	if idle == true:
 		animation_tree["parameters/conditions/idle"]= true

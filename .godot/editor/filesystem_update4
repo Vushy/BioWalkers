@@ -15,3 +15,8 @@ res://scene/health.tscn
 res://script/health.gd
 res://script/battle.gd
 res://script/heart.gd
+res://script/world.gd
+res://script/player.gd
+res://scene/world.tscn
+res://script/nworld.gd
+res://new_theme1.tres
