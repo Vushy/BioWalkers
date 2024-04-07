@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://dp2m2o5lnbyke"]
+[gd_scene load_steps=30 format=3 uid="uid://dp2m2o5lnbyke"]
 
 [ext_resource type="Script" path="res://script/enemy_slime_battle.gd" id="1_dvedf"]
 [ext_resource type="Texture2D" uid="uid://c1ud1x2kak27o" path="res://art/characters/enemy/battle enemy/slime-attack-0.png" id="1_gm534"]
@@ -6,6 +6,60 @@
 [ext_resource type="Texture2D" uid="uid://by3480ri5ufj3" path="res://art/characters/enemy/battle enemy/slime-die-0.png" id="6_2lleg"]
 [ext_resource type="Texture2D" uid="uid://vv2vtc2e1wh6" path="res://art/characters/enemy/battle enemy/slime-idle-0.png" id="10_5h3jd"]
 [ext_resource type="Texture2D" uid="uid://dhl33es5mgq6s" path="res://art/characters/enemy/battle enemy/slime-move-0.png" id="14_iaaki"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_giyib"]
+radius = 32.4076
+
+[sub_resource type="Animation" id="Animation_qm5se"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("enemySprite:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("1_gm534")]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("enemySprite:hframes")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [4]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("enemySprite:vframes")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [1]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("enemySprite:frame")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
 
 [sub_resource type="Animation" id="Animation_c5euq"]
 resource_name = "attack"
@@ -59,8 +113,9 @@ tracks/3/keys = {
 "values": [0, 1, 2, 3, 4]
 }
 
-[sub_resource type="Animation" id="Animation_qm5se"]
-length = 0.001
+[sub_resource type="Animation" id="Animation_wwivp"]
+resource_name = "death"
+length = 0.4
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -71,7 +126,7 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [ExtResource("1_gm534")]
+"values": [ExtResource("6_2lleg")]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
@@ -104,10 +159,62 @@ tracks/3/path = NodePath("enemySprite:frame")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3]
+}
+
+[sub_resource type="Animation" id="Animation_ew8mo"]
+resource_name = "hurt"
+length = 0.4
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("enemySprite:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [0]
+"values": [ExtResource("5_ejqlt")]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("enemySprite:hframes")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [4]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("enemySprite:vframes")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [1]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("enemySprite:frame")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3]
 }
 
 [sub_resource type="Animation" id="Animation_bkjh4"]
@@ -216,110 +323,6 @@ tracks/3/keys = {
 "values": [0, 1, 2, 3]
 }
 
-[sub_resource type="Animation" id="Animation_ew8mo"]
-resource_name = "hurt"
-length = 0.4
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("enemySprite:texture")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [ExtResource("5_ejqlt")]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("enemySprite:hframes")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [4]
-}
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("enemySprite:vframes")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [1]
-}
-tracks/3/type = "value"
-tracks/3/imported = false
-tracks/3/enabled = true
-tracks/3/path = NodePath("enemySprite:frame")
-tracks/3/interp = 1
-tracks/3/loop_wrap = true
-tracks/3/keys = {
-"times": PackedFloat32Array(0, 0.1, 0.2, 0.3),
-"transitions": PackedFloat32Array(1, 1, 1, 1),
-"update": 1,
-"values": [0, 1, 2, 3]
-}
-
-[sub_resource type="Animation" id="Animation_wwivp"]
-resource_name = "death"
-length = 0.4
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("enemySprite:texture")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [ExtResource("6_2lleg")]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("enemySprite:hframes")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [4]
-}
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("enemySprite:vframes")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [1]
-}
-tracks/3/type = "value"
-tracks/3/imported = false
-tracks/3/enabled = true
-tracks/3/path = NodePath("enemySprite:frame")
-tracks/3/interp = 1
-tracks/3/loop_wrap = true
-tracks/3/keys = {
-"times": PackedFloat32Array(0, 0.1, 0.2, 0.3),
-"transitions": PackedFloat32Array(1, 1, 1, 1),
-"update": 1,
-"values": [0, 1, 2, 3]
-}
-
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_6ihht"]
 _data = {
 "RESET": SubResource("Animation_qm5se"),
@@ -331,19 +334,86 @@ _data = {
 }
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_kdtxi"]
-radius = 122.671
+radius = 118.527
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_giyib"]
-radius = 94.951
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_6lgpr"]
+animation = &"attack"
 
-[node name="slime_battle" type="CharacterBody2D"]
-scale = Vector2(2.3, 2.3)
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_pfk87"]
+animation = &"death"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_odq6w"]
+animation = &"hurt"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_kg1jg"]
+animation = &"idle"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_sass4"]
+animation = &"move"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_00r6w"]
+advance_mode = 2
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_jpcne"]
+advance_mode = 2
+advance_condition = &"move"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_xoa87"]
+advance_mode = 2
+advance_condition = &"idle"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_b0kj2"]
+advance_mode = 2
+advance_condition = &"hurt"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_mjans"]
+switch_mode = 2
+advance_mode = 2
+advance_condition = &"done_hurt"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_6ms0s"]
+advance_mode = 2
+advance_condition = &"is_dead"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_q6ys0"]
+advance_mode = 2
+advance_condition = &"is_attacking"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_61lkv"]
+switch_mode = 2
+advance_mode = 2
+advance_condition = &"doneAtk"
+
+[sub_resource type="AnimationNodeStateMachine" id="AnimationNodeStateMachine_5r54p"]
+states/attack/node = SubResource("AnimationNodeAnimation_6lgpr")
+states/attack/position = Vector2(481, 191)
+states/death/node = SubResource("AnimationNodeAnimation_pfk87")
+states/death/position = Vector2(337, 23)
+states/hurt/node = SubResource("AnimationNodeAnimation_odq6w")
+states/hurt/position = Vector2(337, 201)
+states/idle/node = SubResource("AnimationNodeAnimation_kg1jg")
+states/idle/position = Vector2(337, 100)
+states/move/node = SubResource("AnimationNodeAnimation_sass4")
+states/move/position = Vector2(481, 100)
+transitions = ["Start", "idle", SubResource("AnimationNodeStateMachineTransition_00r6w"), "idle", "move", SubResource("AnimationNodeStateMachineTransition_jpcne"), "move", "idle", SubResource("AnimationNodeStateMachineTransition_xoa87"), "idle", "hurt", SubResource("AnimationNodeStateMachineTransition_b0kj2"), "hurt", "idle", SubResource("AnimationNodeStateMachineTransition_mjans"), "idle", "death", SubResource("AnimationNodeStateMachineTransition_6ms0s"), "idle", "attack", SubResource("AnimationNodeStateMachineTransition_q6ys0"), "attack", "idle", SubResource("AnimationNodeStateMachineTransition_61lkv")]
+graph_offset = Vector2(0, -19.0082)
+
+[node name="slimebattle" type="CharacterBody2D"]
+scale = Vector2(2.3, 2.33141)
 collision_layer = 5
 collision_mask = 5
 script = ExtResource("1_dvedf")
 
+[node name="attackTimer" type="Timer" parent="."]
+one_shot = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_giyib")
+debug_color = Color(0.968627, 0, 0.478431, 0.419608)
+
 [node name="enemySprite" type="Sprite2D" parent="."]
-scale = Vector2(2.3, 2.3)
+position = Vector2(-0.173913, 0.896737)
+scale = Vector2(1.70435, 2.08913)
 texture = ExtResource("1_gm534")
 hframes = 4
 
@@ -351,17 +421,29 @@ hframes = 4
 libraries = {
 "": SubResource("AnimationLibrary_6ihht")
 }
-autoplay = "idle"
+speed_scale = 0.6
 
-[node name="Area2D" type="Area2D" parent="."]
-collision_layer = 4
-collision_mask = 4
+[node name="enemyHitbox" type="Area2D" parent="."]
+collision_layer = 261
+collision_mask = 261
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="enemyHitbox"]
+scale = Vector2(0.634783, 0.609245)
 shape = SubResource("CircleShape2D_kdtxi")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-shape = SubResource("CircleShape2D_giyib")
-debug_color = Color(0.968627, 0, 0.478431, 0.419608)
+[node name="AnimationTree" type="AnimationTree" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_6ihht")
+}
+tree_root = SubResource("AnimationNodeStateMachine_5r54p")
+anim_player = NodePath("../enemyAnim")
+parameters/conditions/doneAtk = false
+parameters/conditions/done_hurt = false
+parameters/conditions/hurt = false
+parameters/conditions/idle = false
+parameters/conditions/is_attacking = false
+parameters/conditions/is_dead = false
+parameters/conditions/move = false
 
-[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
+[node name="enemyHurt" type="Timer" parent="."]
+one_shot = true

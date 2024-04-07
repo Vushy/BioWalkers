@@ -71,7 +71,7 @@ tracks/2/keys = {
 tracks/3/type = "value"
 tracks/3/imported = false
 tracks/3/enabled = true
-tracks/3/path = NodePath("Characters/CharacterBody2D:position")
+tracks/3/path = NodePath("Characters/slimebattle:position")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/keys = {
@@ -79,6 +79,60 @@ tracks/3/keys = {
 "transitions": PackedFloat32Array(1),
 "update": 0,
 "values": [Vector2(1023, 475)]
+}
+
+[sub_resource type="Animation" id="Animation_1kase"]
+resource_name = "enemyMove"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Characters/slimebattle:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(1023, 475), Vector2(200, 475)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("anim:speed_scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.6]
+}
+
+[sub_resource type="Animation" id="Animation_ajo18"]
+resource_name = "move"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Characters/battlePlayer:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(89, 472), Vector2(870, 472)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("anim:speed_scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.6]
 }
 
 [sub_resource type="Animation" id="Animation_hlw2k"]
@@ -121,60 +175,6 @@ tracks/2/keys = {
 "values": [false, true]
 }
 
-[sub_resource type="Animation" id="Animation_ajo18"]
-resource_name = "move"
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Characters/battlePlayer:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 1),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Vector2(89, 450), Vector2(870, 450)]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("anim:speed_scale")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [0.6]
-}
-
-[sub_resource type="Animation" id="Animation_1kase"]
-resource_name = "enemyMove"
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Characters/CharacterBody2D:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 1),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Vector2(1023, 475), Vector2(200, 475)]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("anim:speed_scale")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [0.6]
-}
-
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_4jcvx"]
 _data = {
 "RESET": SubResource("Animation_m6d8r"),
@@ -186,20 +186,27 @@ _data = {
 [node name="Battle Scene" type="Node2D"]
 script = ExtResource("1_gnwya")
 
-[node name="Background" type="CanvasLayer" parent="."]
+[node name="background" type="CanvasLayer" parent="."]
 
-[node name="TextureRect" type="TextureRect" parent="Background"]
+[node name="TextureRect" type="TextureRect" parent="background"]
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_left = -3.0
+offset_top = -8.0
+offset_right = 13.0
+offset_bottom = 25.0
 grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("1_kjwsa")
 
-[node name="TextureRect2" type="TextureRect" parent="Background"]
+[node name="TextureRect2" type="TextureRect" parent="background"]
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_left = 3.0
+offset_top = -1.0
+offset_bottom = 25.0
 grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("2_1kg6g")
@@ -220,18 +227,18 @@ layer_0/tile_data = PackedInt32Array(1310720, 65536, 0, 1310723, 65536, 0, 13107
 [node name="Characters" type="CanvasLayer" parent="."]
 layer = 3
 
-[node name="battlePlayer" parent="Characters" instance=ExtResource("4_ca7tq")]
-position = Vector2(89, 450)
-
-[node name="CharacterBody2D" parent="Characters" instance=ExtResource("5_uep4d")]
-position = Vector2(1023, 475)
-
 [node name="health_container" parent="Characters" instance=ExtResource("5_xxew2")]
 offset_left = 10.0
 offset_top = 10.0
 offset_right = 172.0
 offset_bottom = 54.0
 scale = Vector2(1.645, 1.645)
+
+[node name="battlePlayer" parent="Characters" instance=ExtResource("4_ca7tq")]
+position = Vector2(89, 472)
+
+[node name="slimebattle" parent="Characters" instance=ExtResource("5_uep4d")]
+position = Vector2(1023, 475)
 
 [node name="questionpanels" type="CanvasLayer" parent="."]
 

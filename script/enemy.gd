@@ -26,9 +26,6 @@ func _physics_process(delta):
 		
 
 
-
-
-
 func _on_detection_area_body_entered(body):
 	if body.has_method("player"):
 		player_chase = true

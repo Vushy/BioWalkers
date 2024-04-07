@@ -1,6 +1,8 @@
+Timer
+AnimationTree
+CanvasLayer
 CollisionShape2D
 Area2D
-AnimationTree
 AnimationPlayer
 Sprite2D
 ItemList
@@ -8,7 +10,5 @@ Control
 VBoxContainer
 Label
 Panel
-CanvasLayer
-Timer
 TextureRect
 CharacterBody2D
