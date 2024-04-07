@@ -28,8 +28,9 @@ var moving
 var enemyAtk
 var enemyMove
 
-# Enemy's position
+# conditions
 var Correct 
+var playerDmg = 1
 
 signal player_should_attack(Correct)
 signal player_hurt
@@ -48,10 +49,12 @@ func player_attack():
 	answerCorrect = true
 	attack = true
 	moving = true
+	
 	# Emit signal with the current enemy position for the player to move and attack
 	emit_signal("player_should_attack", get_enemy_position())
 	emit_signal("enemy_hurt")
 	print("Signal emitted to attack at position: ", get_enemy_position())
+	return playerDmg
 func enemy_attack():
 	answerCorrect = false
 	enemyAtk = true
@@ -63,6 +66,7 @@ func set_enemy_position(position):
 	answerCorrect = true
 
 func get_enemy_position():
+	
 	return answerCorrect
 
 

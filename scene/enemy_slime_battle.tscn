@@ -1,4 +1,4 @@
-[gd_scene load_steps=30 format=3 uid="uid://dp2m2o5lnbyke"]
+[gd_scene load_steps=33 format=3 uid="uid://dp2m2o5lnbyke"]
 
 [ext_resource type="Script" path="res://script/enemy_slime_battle.gd" id="1_dvedf"]
 [ext_resource type="Texture2D" uid="uid://c1ud1x2kak27o" path="res://art/characters/enemy/battle enemy/slime-attack-0.png" id="1_gm534"]
@@ -398,6 +398,25 @@ states/move/position = Vector2(481, 100)
 transitions = ["Start", "idle", SubResource("AnimationNodeStateMachineTransition_00r6w"), "idle", "move", SubResource("AnimationNodeStateMachineTransition_jpcne"), "move", "idle", SubResource("AnimationNodeStateMachineTransition_xoa87"), "idle", "hurt", SubResource("AnimationNodeStateMachineTransition_b0kj2"), "hurt", "idle", SubResource("AnimationNodeStateMachineTransition_mjans"), "idle", "death", SubResource("AnimationNodeStateMachineTransition_6ms0s"), "idle", "attack", SubResource("AnimationNodeStateMachineTransition_q6ys0"), "attack", "idle", SubResource("AnimationNodeStateMachineTransition_61lkv")]
 graph_offset = Vector2(0, -19.0082)
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_p17k0"]
+bg_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 3
+corner_radius_top_right = 3
+corner_radius_bottom_right = 3
+corner_radius_bottom_left = 3
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_4babl"]
+bg_color = Color(1, 0, 0, 1)
+border_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 3
+corner_radius_top_right = 3
+corner_radius_bottom_right = 3
+corner_radius_bottom_left = 3
+
+[sub_resource type="Theme" id="Theme_r3pba"]
+ProgressBar/styles/background = SubResource("StyleBoxFlat_p17k0")
+ProgressBar/styles/fill = SubResource("StyleBoxFlat_4babl")
+
 [node name="slimebattle" type="CharacterBody2D"]
 scale = Vector2(2.3, 2.33141)
 collision_layer = 5
@@ -447,3 +466,12 @@ parameters/conditions/move = false
 
 [node name="enemyHurt" type="Timer" parent="."]
 one_shot = true
+
+[node name="enemyHealth" type="ProgressBar" parent="."]
+offset_left = -33.4783
+offset_top = -26.5933
+offset_right = 32.5217
+offset_bottom = -8.59335
+theme = SubResource("Theme_r3pba")
+max_value = 10.0
+show_percentage = false

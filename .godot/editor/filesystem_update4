@@ -10,3 +10,8 @@ res://scene/enemy.tscn
 res://global.gd
 res://script/enemy_slime_battle.gd
 res://script/battle_player.gd
+res://scene/heart.tscn
+res://scene/health.tscn
+res://script/health.gd
+res://script/battle.gd
+res://script/heart.gd

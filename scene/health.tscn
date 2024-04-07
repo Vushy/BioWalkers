@@ -1,17 +1,9 @@
 [gd_scene load_steps=2 format=3 uid="uid://81r51837d822"]
 
-[ext_resource type="PackedScene" uid="uid://lb0kvbkaotjg" path="res://scene/heart.tscn" id="1_igi56"]
+[ext_resource type="Script" path="res://script/health.gd" id="1_w8cbb"]
 
 [node name="health_container" type="HBoxContainer"]
 offset_right = 134.0
 offset_bottom = 44.0
-theme_override_constants/separation = -14
-
-[node name="Panel" parent="." instance=ExtResource("1_igi56")]
-layout_mode = 2
-
-[node name="Panel3" parent="." instance=ExtResource("1_igi56")]
-layout_mode = 2
-
-[node name="Panel2" parent="." instance=ExtResource("1_igi56")]
-layout_mode = 2
+theme_override_constants/separation = -7
+script = ExtResource("1_w8cbb")

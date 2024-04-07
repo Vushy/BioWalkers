@@ -1,7 +1,9 @@
 extends Node2D
-
+@onready var heartsContainer =  $Characters/health_container
 @onready var listItem: ItemList = $questionpanels/ItemList
 @onready var questionLabel: Label = $questionpanels/Label/question
+@onready var player = $Characters/battlePlayer
+@onready var enemy = $Characters/slimebattle
 var questions: Array = []
 var current_question_index = 0
 var start = true
@@ -11,6 +13,9 @@ enum GameState {WAITING_FOR_PLAYER, PLAYER_ATTACK, ENEMY_ATTACK, CHECK_GAME_OVER
 var game_state = GameState.WAITING_FOR_PLAYER
 
 func _ready():
+	heartsContainer.setMaxHeart(player.maxHealth)
+	heartsContainer.updateHearts(player.Playerhealth)
+	player.healthChanged.connect(heartsContainer.updateHearts)
 	load_questions()
 	display_current_question()
 	listItem.connect("item_selected", Callable(self, "_on_choice_selected"))

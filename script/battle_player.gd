@@ -5,6 +5,11 @@ extends CharacterBody2D
 @onready var timer: Timer = $attackTimer
 @onready var hurtTimer: Timer = $hurtTimer
 @export var speed = 500
+@export var maxHealth = 3
+@onready var Playerhealth : int = maxHealth
+
+signal healthChanged
+
 var idle = true
 var moving_to_enemy = false
 var returning_to_original_position = false
@@ -34,7 +39,6 @@ func trigger_attack():
 	animation_tree["parameters/conditions/is_attacking"]= true
 	idle = false
 	timer.start(1)  # Set this to the length of your attack animation
-
 func _on_attack_animation_done():
 	print('done atk')
 	animation_tree["parameters/conditions/is_attacking"]= false
@@ -45,8 +49,14 @@ func _on_attack_animation_done():
 
 func on_player_hurt():
 	print("player hurt")
+	Playerhealth -= 1
+	
+	print_debug(maxHealth)
+	healthChanged.emit(Playerhealth)
 	animation_tree["parameters/conditions/is_hurt"]= true
 	hurtTimer.start(0.7)
+	
+	
 func player_done_hurt():
 	animation_tree["parameters/conditions/is_hurt"]= false
 	animation_tree["parameters/conditions/notHurt"] = true
