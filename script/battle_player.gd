@@ -66,7 +66,9 @@ func player_done_hurt():
 func playerDeath():
 	if Playerhealth == 0:
 		print('player Dead')
+		get_tree().change_scene_to_file("res://scene/death_scene.tscn")
 		animation_tree["parameters/conditions/is_dead"]= true
+		global.player_alive = true 
 func update_param():
 	if idle == true:
 		animation_tree["parameters/conditions/idle"]= true

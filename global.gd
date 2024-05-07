@@ -27,7 +27,7 @@ var attack
 var moving
 var enemyAtk
 var enemyMove
-
+var player_alive = false
 # conditions
 var Correct 
 var playerDmg = 1
@@ -43,6 +43,8 @@ func set_player_position(position):
 
 func get_player_position():
 	return player_pos
+
+	
 
 
 func player_attack():

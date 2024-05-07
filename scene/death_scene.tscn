@@ -1,0 +1,59 @@
+[gd_scene load_steps=7 format=3 uid="uid://dn4b5b5lwsdfh"]
+
+[ext_resource type="FontFile" uid="uid://cv6i6vlj4tcc5" path="res://art/touchpad/BROMPH_TOWN.otf" id="1_ygwgl"]
+[ext_resource type="FontFile" uid="uid://1426cm2tsn1y" path="res://BMRIA___.TTF" id="2_isnks"]
+
+[sub_resource type="Theme" id="Theme_welht"]
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_vge0o"]
+specular_color = Color(0, 0, 0, 1)
+
+[sub_resource type="Theme" id="Theme_8nwj0"]
+default_font = ExtResource("1_ygwgl")
+default_font_size = 80
+/colors/color = Color(1, 0, 0, 1)
+
+[sub_resource type="Theme" id="Theme_a1b7e"]
+default_font = ExtResource("2_isnks")
+default_font_size = 30
+
+[node name="Node2D" type="Node2D"]
+
+[node name="TextureRect" type="TextureRect" parent="."]
+self_modulate = Color(0, 0, 0, 1)
+offset_right = 1155.0
+offset_bottom = 646.0
+theme = SubResource("Theme_welht")
+texture = SubResource("CanvasTexture_vge0o")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="RichTextLabel" type="RichTextLabel" parent="CanvasLayer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 414.0
+offset_top = 196.0
+offset_right = -345.0
+offset_bottom = -286.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+theme = SubResource("Theme_8nwj0")
+theme_override_colors/default_color = Color(1, 0, 0, 1)
+text = "	Game
+	 Over"
+
+[node name="RichTextLabel2" type="RichTextLabel" parent="CanvasLayer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 331.0
+offset_top = 504.0
+offset_right = -251.0
+offset_bottom = -105.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+theme = SubResource("Theme_a1b7e")
+text = "Click to restart"

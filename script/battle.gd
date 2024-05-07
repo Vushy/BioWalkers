@@ -19,6 +19,8 @@ func _ready():
 	load_questions()
 	display_current_question()
 	listItem.connect("item_selected", Callable(self, "_on_choice_selected"))
+	
+	
 
 func _process(delta: float) -> void:
 	if start:
@@ -66,6 +68,7 @@ func check_game_over() -> bool:
 func end_game() -> void:
 	# Handle end of game, such as going to a game over screen or resetting the battle
 	print("Game Over!")
+
 
 func load_questions() -> void:
 	var file = FileAccess.open("res://questions/questions.json", FileAccess.READ)
