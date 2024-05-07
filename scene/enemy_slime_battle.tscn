@@ -451,9 +451,6 @@ scale = Vector2(0.634783, 0.609245)
 shape = SubResource("CircleShape2D_kdtxi")
 
 [node name="AnimationTree" type="AnimationTree" parent="."]
-libraries = {
-"": SubResource("AnimationLibrary_6ihht")
-}
 tree_root = SubResource("AnimationNodeStateMachine_5r54p")
 anim_player = NodePath("../enemyAnim")
 parameters/conditions/doneAtk = false
