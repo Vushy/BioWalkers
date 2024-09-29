@@ -352,14 +352,13 @@ animation = &"idle"
 animation = &"move"
 
 [sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_00r6w"]
-advance_mode = 2
 
 [sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_jpcne"]
-advance_mode = 2
+switch_mode = 1
 advance_condition = &"move"
 
 [sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_xoa87"]
-advance_mode = 2
+switch_mode = 1
 advance_condition = &"idle"
 
 [sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_b0kj2"]
@@ -375,18 +374,15 @@ advance_condition = &"done_hurt"
 advance_mode = 2
 advance_condition = &"is_dead"
 
-[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_q6ys0"]
-advance_mode = 2
-advance_condition = &"is_attacking"
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_46680"]
+switch_mode = 1
 
-[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_61lkv"]
-switch_mode = 2
-advance_mode = 2
-advance_condition = &"doneAtk"
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_s4y4i"]
+switch_mode = 1
 
 [sub_resource type="AnimationNodeStateMachine" id="AnimationNodeStateMachine_5r54p"]
 states/attack/node = SubResource("AnimationNodeAnimation_6lgpr")
-states/attack/position = Vector2(481, 191)
+states/attack/position = Vector2(511, 193)
 states/death/node = SubResource("AnimationNodeAnimation_pfk87")
 states/death/position = Vector2(337, 23)
 states/hurt/node = SubResource("AnimationNodeAnimation_odq6w")
@@ -394,8 +390,8 @@ states/hurt/position = Vector2(337, 201)
 states/idle/node = SubResource("AnimationNodeAnimation_kg1jg")
 states/idle/position = Vector2(337, 100)
 states/move/node = SubResource("AnimationNodeAnimation_sass4")
-states/move/position = Vector2(481, 100)
-transitions = ["Start", "idle", SubResource("AnimationNodeStateMachineTransition_00r6w"), "idle", "move", SubResource("AnimationNodeStateMachineTransition_jpcne"), "move", "idle", SubResource("AnimationNodeStateMachineTransition_xoa87"), "idle", "hurt", SubResource("AnimationNodeStateMachineTransition_b0kj2"), "hurt", "idle", SubResource("AnimationNodeStateMachineTransition_mjans"), "idle", "death", SubResource("AnimationNodeStateMachineTransition_6ms0s"), "idle", "attack", SubResource("AnimationNodeStateMachineTransition_q6ys0"), "attack", "idle", SubResource("AnimationNodeStateMachineTransition_61lkv")]
+states/move/position = Vector2(511, 23)
+transitions = ["Start", "idle", SubResource("AnimationNodeStateMachineTransition_00r6w"), "idle", "move", SubResource("AnimationNodeStateMachineTransition_jpcne"), "move", "idle", SubResource("AnimationNodeStateMachineTransition_xoa87"), "idle", "hurt", SubResource("AnimationNodeStateMachineTransition_b0kj2"), "hurt", "idle", SubResource("AnimationNodeStateMachineTransition_mjans"), "idle", "death", SubResource("AnimationNodeStateMachineTransition_6ms0s"), "move", "attack", SubResource("AnimationNodeStateMachineTransition_46680"), "attack", "move", SubResource("AnimationNodeStateMachineTransition_s4y4i")]
 graph_offset = Vector2(0, -19.0082)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_p17k0"]
@@ -422,6 +418,8 @@ scale = Vector2(2.3, 2.33141)
 collision_layer = 5
 collision_mask = 5
 script = ExtResource("1_dvedf")
+
+[node name="movetimer" type="Timer" parent="."]
 
 [node name="attackTimer" type="Timer" parent="."]
 one_shot = true
@@ -453,11 +451,9 @@ shape = SubResource("CircleShape2D_kdtxi")
 [node name="AnimationTree" type="AnimationTree" parent="."]
 tree_root = SubResource("AnimationNodeStateMachine_5r54p")
 anim_player = NodePath("../enemyAnim")
-parameters/conditions/doneAtk = false
 parameters/conditions/done_hurt = false
 parameters/conditions/hurt = false
 parameters/conditions/idle = false
-parameters/conditions/is_attacking = false
 parameters/conditions/is_dead = false
 parameters/conditions/move = false
 

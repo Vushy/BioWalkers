@@ -1,9 +1,9 @@
 [gd_resource type="Resource" script_class="DialogueResource" load_steps=2 format=3]
 
-[ext_resource type="Script" path="res://addons/dialogue_manager/dialogue_resource.gd" id="1_a5kyl"]
+[ext_resource type="Script" path="res://addons/dialogue_manager/dialogue_resource.gd" id="1_6sksg"]
 
 [resource]
-script = ExtResource("1_a5kyl")
+script = ExtResource("1_6sksg")
 using_states = PackedStringArray()
 titles = {
 "Questions": "4"
@@ -15,7 +15,7 @@ lines = {
 "id": "1",
 "next_id": "4",
 "text": "Questions",
-"type": "title"
+"type": &"title"
 },
 "10": {
 "character": "Nathan",
@@ -28,7 +28,7 @@ lines = {
 "text": "You picked the first one.",
 "text_replacements": Array[Dictionary]([]),
 "translation_key": "You picked the first one.",
-"type": "dialogue"
+"type": &"dialogue"
 },
 "11": {
 "character": "",
@@ -41,7 +41,7 @@ lines = {
 "text": "Second one",
 "text_replacements": Array[Dictionary]([]),
 "translation_key": "Second one",
-"type": "response"
+"type": &"response"
 },
 "12": {
 "character": "Nathan",
@@ -54,7 +54,7 @@ lines = {
 "text": "You picked the second one.",
 "text_replacements": Array[Dictionary]([]),
 "translation_key": "You picked the second one.",
-"type": "dialogue"
+"type": &"dialogue"
 },
 "13": {
 "character": "",
@@ -67,7 +67,7 @@ lines = {
 "text": "End the conversation",
 "text_replacements": Array[Dictionary]([]),
 "translation_key": "End the conversation",
-"type": "response"
+"type": &"response"
 },
 "14": {
 "character": "Nathan",
@@ -79,13 +79,13 @@ lines = {
 "text": "For more information see the online documentation.",
 "text_replacements": Array[Dictionary]([]),
 "translation_key": "For more information see the online documentation.",
-"type": "dialogue"
+"type": &"dialogue"
 },
 "16": {
 "id": "16",
 "is_snippet": false,
 "next_id": "end",
-"type": "goto"
+"type": &"goto"
 },
 "4": {
 "character": "Slime",
@@ -97,7 +97,7 @@ lines = {
 "text": "Glob* Glob* Glob*",
 "text_replacements": Array[Dictionary]([]),
 "translation_key": "Glob* Glob* Glob*",
-"type": "dialogue"
+"type": &"dialogue"
 },
 "5": {
 "character": "Slime",
@@ -109,7 +109,7 @@ lines = {
 "text": "[[What is the main components of the air that we need to breathe? Answer me if not, your journey will end here!| ]]",
 "text_replacements": Array[Dictionary]([]),
 "translation_key": "[[What is the main components of the air that we need to breathe? Answer me if not, your journey will end here!| ]]",
-"type": "dialogue"
+"type": &"dialogue"
 },
 "7": {
 "character": "Nathan",
@@ -121,7 +121,7 @@ lines = {
 "text": "[[Hi|Hello|Howdy]], this is some dialogue.",
 "text_replacements": Array[Dictionary]([]),
 "translation_key": "[[Hi|Hello|Howdy]], this is some dialogue.",
-"type": "dialogue"
+"type": &"dialogue"
 },
 "8": {
 "character": "Nathan",
@@ -133,7 +133,7 @@ lines = {
 "text": "Here are some choices.",
 "text_replacements": Array[Dictionary]([]),
 "translation_key": "Here are some choices.",
-"type": "dialogue"
+"type": &"dialogue"
 },
 "9": {
 "character": "",
@@ -147,7 +147,7 @@ lines = {
 "text": "First one",
 "text_replacements": Array[Dictionary]([]),
 "translation_key": "First one",
-"type": "response"
+"type": &"response"
 }
 }
 raw_text = "~ Questions
@@ -166,4 +166,4 @@ Nathan: Here are some choices.
 Nathan: For more information see the online documentation.
 
 => END"
-metadata/dialogue_manager_version = "2.36.0"
+metadata/dialogue_manager_version = "2.41.4"

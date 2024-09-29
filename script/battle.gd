@@ -7,7 +7,7 @@ extends Node2D
 var questions: Array = []
 var current_question_index = 0
 var start = true
-
+var playerRetreat 
 # Enum to handle game states
 enum GameState {WAITING_FOR_PLAYER, PLAYER_ATTACK, ENEMY_ATTACK, CHECK_GAME_OVER}
 var game_state = GameState.WAITING_FOR_PLAYER
@@ -29,28 +29,59 @@ func _process(delta: float) -> void:
 	match game_state:
 		GameState.PLAYER_ATTACK:
 			# Trigger player attack and possibly check for game over
-			player_attack()
+			player_advance()
 			game_state = GameState.CHECK_GAME_OVER
 		GameState.ENEMY_ATTACK:
 			# Trigger enemy attack and possibly check for game over
-			enemy_attack()
+			enemy_advance()
 			game_state = GameState.CHECK_GAME_OVER
 		GameState.CHECK_GAME_OVER:
 			# Check if the game is over (implement your own logic here)
-			if check_game_over():
-				end_game()
-			else:
-				game_state = GameState.WAITING_FOR_PLAYER
-
+			check_game_over()
+				
+	
+	
+func player_advance():
+	global.player_Adv()
+	$anim.play("move")
+	await $anim.animation_finished
+	if $anim.animation_finished:
+		
+		#print('animationdone')
+		player_attack()
+		
 func player_attack():
 	global.player_attack()
-	#$anim.play("move")
+	#print('player atack')
 	current_question_index += 1
 	display_current_question()
+	playerRetreat = true
+	
+	await get_tree().create_timer(1).timeout
+	player_retreat()
+
+
+func player_retreat():
+
+	if playerRetreat == true:
+		$anim.play("playerReturn")
+		
+		
+func enemy_advance():
+	$anim.play("enemyMove")
+	global.enemyAdv()
+	await $anim.animation_finished
+	if $anim.animation_finished:
+		enemy_attack()
 
 func enemy_attack():
 	global.enemy_attack()
-	#$anim.play("enemyMove")
+	await get_tree().create_timer(0.5).timeout
+	enemy_retreat()
+
+func enemy_retreat():
+	$anim.play('enemy_retreat')
+	global.enemyRet()
 
 func _on_choice_selected(index: int) -> void:
 	var selected_choice = questions[current_question_index]["choices"][index]
@@ -61,13 +92,14 @@ func _on_choice_selected(index: int) -> void:
 		print("Wrong")
 		game_state = GameState.ENEMY_ATTACK
 
-func check_game_over() -> bool:
-	# Implement logic to determine if the game should end
-	return false
-
-func end_game() -> void:
-	# Handle end of game, such as going to a game over screen or resetting the battle
-	print("Game Over!")
+func check_game_over():
+	if global.playerDead() == true:
+		$anim.play('death')
+		end_game()
+	else:
+		pass
+func end_game():
+	pass
 
 
 func load_questions() -> void:

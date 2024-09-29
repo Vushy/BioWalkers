@@ -1,9 +1,9 @@
 [gd_resource type="Resource" script_class="DialogueResource" load_steps=2 format=3]
 
-[ext_resource type="Script" path="res://addons/dialogue_manager/dialogue_resource.gd" id="1_81bsx"]
+[ext_resource type="Script" path="res://addons/dialogue_manager/dialogue_resource.gd" id="1_4fjsf"]
 
 [resource]
-script = ExtResource("1_81bsx")
+script = ExtResource("1_4fjsf")
 using_states = PackedStringArray()
 titles = {
 "start": "3",
@@ -16,14 +16,14 @@ lines = {
 "id": "1",
 "next_id": "3",
 "text": "start",
-"type": "title"
+"type": &"title"
 },
 "10": {
 "id": "10",
 "is_snippet": false,
 "next_id": "end!",
 "parent_id": "5",
-"type": "goto"
+"type": &"goto"
 },
 "11": {
 "character": "",
@@ -36,7 +36,7 @@ lines = {
 "text": "Hello, Nice to meet you!",
 "text_replacements": Array[Dictionary]([]),
 "translation_key": "Hello, Nice to meet you!",
-"type": "response"
+"type": &"response"
 },
 "12": {
 "character": "Trainer",
@@ -49,7 +49,7 @@ lines = {
 "text": "Nice to meet you too! Enjoy your journey in this game.",
 "text_replacements": Array[Dictionary]([]),
 "translation_key": "Nice to meet you too! Enjoy your journey in this game.",
-"type": "dialogue"
+"type": &"dialogue"
 },
 "13": {
 "id": "13",
@@ -63,11 +63,12 @@ lines = {
 }, {
 "type": "variable",
 "value": "true"
-}])
+}]),
+"is_blocking": true
 },
 "next_id": "14",
 "parent_id": "11",
-"type": "mutation"
+"type": &"mutation"
 },
 "14": {
 "character": "Trainer",
@@ -80,26 +81,26 @@ lines = {
 "text": "That's all! Enjoy.",
 "text_replacements": Array[Dictionary]([]),
 "translation_key": "That's all! Enjoy.",
-"type": "dialogue"
+"type": &"dialogue"
 },
 "15": {
 "id": "15",
 "is_snippet": false,
 "next_id": "end!",
 "parent_id": "11",
-"type": "goto"
+"type": &"goto"
 },
 "17": {
 "id": "17",
 "is_snippet": false,
 "next_id": "end",
-"type": "goto"
+"type": &"goto"
 },
 "19": {
 "id": "19",
 "next_id": "23",
 "text": "video_lesson",
-"type": "title"
+"type": &"title"
 },
 "23": {
 "character": "LEO",
@@ -111,7 +112,7 @@ lines = {
 "text": "[[Hi|Hello|Howdy]], Are you ready for the lesson?",
 "text_replacements": Array[Dictionary]([]),
 "translation_key": "[[Hi|Hello|Howdy]], Are you ready for the lesson?",
-"type": "dialogue"
+"type": &"dialogue"
 },
 "24": {
 "id": "24",
@@ -125,10 +126,11 @@ lines = {
 }, {
 "type": "variable",
 "value": "true"
-}])
+}]),
+"is_blocking": true
 },
 "next_id": "25",
-"type": "mutation"
+"type": &"mutation"
 },
 "25": {
 "condition": {
@@ -149,7 +151,7 @@ lines = {
 "next_conditional_id": "33",
 "next_id": "26",
 "next_id_after": "33",
-"type": "condition"
+"type": &"condition"
 },
 "26": {
 "character": "",
@@ -164,7 +166,7 @@ lines = {
 "text": "Yes",
 "text_replacements": Array[Dictionary]([]),
 "translation_key": "Yes",
-"type": "response"
+"type": &"response"
 },
 "27": {
 "id": "27",
@@ -178,11 +180,12 @@ lines = {
 }, {
 "type": "variable",
 "value": "true"
-}])
+}]),
+"is_blocking": true
 },
 "next_id": "28",
 "parent_id": "26",
-"type": "mutation"
+"type": &"mutation"
 },
 "28": {
 "character": "LEO",
@@ -195,7 +198,7 @@ lines = {
 "text": "Okay! Here we go.",
 "text_replacements": Array[Dictionary]([]),
 "translation_key": "Okay! Here we go.",
-"type": "dialogue"
+"type": &"dialogue"
 },
 "29": {
 "id": "29",
@@ -209,11 +212,12 @@ lines = {
 }, {
 "type": "variable",
 "value": "true"
-}])
+}]),
+"is_blocking": true
 },
 "next_id": "33",
 "parent_id": "26",
-"type": "mutation"
+"type": &"mutation"
 },
 "3": {
 "character": "Trainer",
@@ -225,7 +229,7 @@ lines = {
 "text": "Hi! I am the Trainer, You can ask me questions.",
 "text_replacements": Array[Dictionary]([]),
 "translation_key": "Hi! I am the Trainer, You can ask me questions.",
-"type": "dialogue"
+"type": &"dialogue"
 },
 "30": {
 "character": "",
@@ -239,7 +243,7 @@ lines = {
 "text": "No",
 "text_replacements": Array[Dictionary]([]),
 "translation_key": "No",
-"type": "response"
+"type": &"response"
 },
 "31": {
 "id": "31",
@@ -253,11 +257,12 @@ lines = {
 }, {
 "type": "variable",
 "value": "true"
-}])
+}]),
+"is_blocking": true
 },
 "next_id": "32",
 "parent_id": "30",
-"type": "mutation"
+"type": &"mutation"
 },
 "32": {
 "character": "LEO",
@@ -270,13 +275,13 @@ lines = {
 "text": "Sure take your time just come back later!",
 "text_replacements": Array[Dictionary]([]),
 "translation_key": "Sure take your time just come back later!",
-"type": "dialogue"
+"type": &"dialogue"
 },
 "33": {
 "id": "33",
 "is_snippet": false,
 "next_id": "end",
-"type": "goto"
+"type": &"goto"
 },
 "4": {
 "id": "4",
@@ -290,10 +295,11 @@ lines = {
 }, {
 "type": "variable",
 "value": "true"
-}])
+}]),
+"is_blocking": true
 },
 "next_id": "5",
-"type": "mutation"
+"type": &"mutation"
 },
 "5": {
 "character": "",
@@ -307,7 +313,7 @@ lines = {
 "text": "Hello, How can I play the game?",
 "text_replacements": Array[Dictionary]([]),
 "translation_key": "Hello, How can I play the game?",
-"type": "response"
+"type": &"response"
 },
 "6": {
 "character": "Trainer",
@@ -320,7 +326,7 @@ lines = {
 "text": "Just press the Directional Button to move your chatacter and the two buttons to interact.",
 "text_replacements": Array[Dictionary]([]),
 "translation_key": "Just press the Directional Button to move your chatacter and the two buttons to interact.",
-"type": "dialogue"
+"type": &"dialogue"
 },
 "7": {
 "character": "Trainer",
@@ -333,7 +339,7 @@ lines = {
 "text": "Also talk to the guy with a suit walking ahead and he will give you lessons.",
 "text_replacements": Array[Dictionary]([]),
 "translation_key": "Also talk to the guy with a suit walking ahead and he will give you lessons.",
-"type": "dialogue"
+"type": &"dialogue"
 },
 "8": {
 "character": "Trainer",
@@ -346,7 +352,7 @@ lines = {
 "text": "That's all! Enjoy.",
 "text_replacements": Array[Dictionary]([]),
 "translation_key": "That's all! Enjoy.",
-"type": "dialogue"
+"type": &"dialogue"
 },
 "9": {
 "id": "9",
@@ -360,11 +366,12 @@ lines = {
 }, {
 "type": "variable",
 "value": "true"
-}])
+}]),
+"is_blocking": true
 },
 "next_id": "10",
 "parent_id": "5",
-"type": "mutation"
+"type": &"mutation"
 }
 }
 raw_text = "~ start
@@ -400,4 +407,4 @@ if play == false:
 		set dialogueFinished = true
 		LEO: Sure take your time just come back later!
 => END"
-metadata/dialogue_manager_version = "2.36.0"
+metadata/dialogue_manager_version = "2.41.4"

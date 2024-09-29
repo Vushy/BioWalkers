@@ -3,6 +3,7 @@ extends CharacterBody2D
 @onready var characterAnim = $charAnim
 @onready var animation_tree: AnimationTree = $AnimationTree
 @onready var timer: Timer = $attackTimer
+@onready var moveTimer: Timer = $movingTimer
 @onready var hurtTimer: Timer = $hurtTimer
 @export var speed = 500
 @export var maxHealth = 3
@@ -16,9 +17,18 @@ var returning_to_original_position = false
 var enemy_position: Vector2
 var attack_position_offset = Vector2(50, 0)
 var original_position = Vector2(89, 0)
+var playerState
+var flip
 
 func _ready():
 	animation_tree.active = true
+	playerState = animation_tree['parameters/playback']
+	if idle == true:
+		
+		playerState.travel('idle')
+	else:
+		idle = false
+		return 
 	global.connect("player_should_attack", Callable(self, "on_correct_answer_chosen"))
 	global.connect("player_hurt", Callable(self, "on_player_hurt"))
 	timer.connect("timeout", Callable(self, "_on_attack_animation_done"))
@@ -29,24 +39,35 @@ func _ready():
 func on_correct_answer_chosen(correct: bool):
 	print("on_correct_answer_chosen triggered with correct:", correct)
 	if correct:
-		trigger_attack()
+		playerAdvancing()
 	else:
 		# Handle incorrect answer if needed
 		pass
-
+		
+func playerAdvancing():
+	playerState.travel('run')
+	await get_tree().create_timer(1.5).timeout
+	trigger_attack()
+	
 func trigger_attack():
 	print('attacking')
-	animation_tree["parameters/conditions/is_attacking"]= true
+	playerState.travel('attack')
 	idle = false
-	timer.start(1)  # Set this to the length of your attack animation
-func _on_attack_animation_done():
-	print('done atk')
-	animation_tree["parameters/conditions/is_attacking"]= false
-	# Set any other parameters to return to idle or other state
-	animation_tree["parameters/conditions/doneAtk"]= true
-	idle = true
-	timer.stop()
+	await get_tree().create_timer(1).timeout
+	$charSprite.flip_h = true
+	playerRetreat()
+ # Set this to the length of your attack animation
+	
 
+	
+func playerRetreat():
+	#flip = global.playerFinishedAtk
+	playerState.travel('run')
+	await get_tree().create_timer(1.85).timeout
+	$charSprite.flip_h = false
+	playerState.travel('idle')
+
+	
 func on_player_hurt():
 	print("player hurt")
 	Playerhealth -= 1
@@ -66,11 +87,7 @@ func player_done_hurt():
 func playerDeath():
 	if Playerhealth == 0:
 		print('player Dead')
+		playerState.travel('death')
+		await get_tree().create_timer(5).timeout
 		get_tree().change_scene_to_file("res://scene/death_scene.tscn")
-		animation_tree["parameters/conditions/is_dead"]= true
-		global.player_alive = true 
-func update_param():
-	if idle == true:
-		animation_tree["parameters/conditions/idle"]= true
-	else:
-		animation_tree["parameters/conditions/idle"]= false
+		global.player_alive = false

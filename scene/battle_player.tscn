@@ -375,15 +375,8 @@ animation = &"idle"
 animation = &"run"
 
 [sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_rlfjc"]
-advance_mode = 2
-
-[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_sl6lw"]
-advance_mode = 2
-advance_condition = &"is_moving"
-
-[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_5yju4"]
-advance_mode = 2
-advance_condition = &"idle"
+switch_mode = 1
+advance_condition = &"is_idling"
 
 [sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_ntvuv"]
 advance_mode = 2
@@ -398,20 +391,27 @@ advance_condition = &"notHurt"
 advance_mode = 2
 advance_condition = &"is_dead"
 
-[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_r14ep"]
-advance_mode = 2
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_ait4u"]
+switch_mode = 1
+advance_condition = &"is_advancing"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_kvjoq"]
+switch_mode = 1
+advance_condition = &"is_retreating"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_bl54t"]
+switch_mode = 1
 advance_condition = &"is_attacking"
 
-[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_y6qa0"]
-switch_mode = 2
-advance_mode = 2
-advance_condition = &"doneAtk"
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_n8h8q"]
+switch_mode = 1
+advance_condition = &"is_doneAtk"
 
 [sub_resource type="AnimationNodeStateMachine" id="AnimationNodeStateMachine_ntxp1"]
 states/End/position = Vector2(651, 100)
 states/Start/position = Vector2(129, 100)
 states/attack/node = SubResource("AnimationNodeAnimation_sthbq")
-states/attack/position = Vector2(359, 193)
+states/attack/position = Vector2(437, 193)
 states/death/node = SubResource("AnimationNodeAnimation_mcitp")
 states/death/position = Vector2(239, 17.8361)
 states/hurt/node = SubResource("AnimationNodeAnimation_teuat")
@@ -419,8 +419,8 @@ states/hurt/position = Vector2(239, 193)
 states/idle/node = SubResource("AnimationNodeAnimation_4a8x2")
 states/idle/position = Vector2(239, 100)
 states/run/node = SubResource("AnimationNodeAnimation_4tlus")
-states/run/position = Vector2(468, 100)
-transitions = ["Start", "idle", SubResource("AnimationNodeStateMachineTransition_rlfjc"), "idle", "run", SubResource("AnimationNodeStateMachineTransition_sl6lw"), "run", "idle", SubResource("AnimationNodeStateMachineTransition_5yju4"), "idle", "hurt", SubResource("AnimationNodeStateMachineTransition_ntvuv"), "hurt", "idle", SubResource("AnimationNodeStateMachineTransition_tid31"), "idle", "death", SubResource("AnimationNodeStateMachineTransition_o5xj1"), "idle", "attack", SubResource("AnimationNodeStateMachineTransition_r14ep"), "attack", "idle", SubResource("AnimationNodeStateMachineTransition_y6qa0")]
+states/run/position = Vector2(437, 17.8361)
+transitions = ["Start", "idle", SubResource("AnimationNodeStateMachineTransition_rlfjc"), "idle", "hurt", SubResource("AnimationNodeStateMachineTransition_ntvuv"), "hurt", "idle", SubResource("AnimationNodeStateMachineTransition_tid31"), "idle", "death", SubResource("AnimationNodeStateMachineTransition_o5xj1"), "idle", "run", SubResource("AnimationNodeStateMachineTransition_ait4u"), "run", "idle", SubResource("AnimationNodeStateMachineTransition_kvjoq"), "run", "attack", SubResource("AnimationNodeStateMachineTransition_bl54t"), "attack", "run", SubResource("AnimationNodeStateMachineTransition_n8h8q")]
 graph_offset = Vector2(0, -15.1639)
 
 [node name="battlePlayer" type="CharacterBody2D"]
@@ -429,6 +429,9 @@ collision_mask = 5
 script = ExtResource("1_h53ao")
 
 [node name="attackTimer" type="Timer" parent="."]
+one_shot = true
+
+[node name="movingTimer" type="Timer" parent="."]
 one_shot = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
@@ -457,12 +460,13 @@ shape = SubResource("CircleShape2D_mbx2h")
 [node name="AnimationTree" type="AnimationTree" parent="."]
 tree_root = SubResource("AnimationNodeStateMachine_ntxp1")
 anim_player = NodePath("../charAnim")
-parameters/conditions/doneAtk = false
-parameters/conditions/idle = false
+parameters/conditions/is_advancing = false
 parameters/conditions/is_attacking = false
 parameters/conditions/is_dead = false
+parameters/conditions/is_doneAtk = false
 parameters/conditions/is_hurt = false
-parameters/conditions/is_moving = false
+parameters/conditions/is_idling = false
+parameters/conditions/is_retreating = false
 parameters/conditions/notHurt = false
 
 [node name="hurtTimer" type="Timer" parent="."]
