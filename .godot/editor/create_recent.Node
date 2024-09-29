@@ -1,8 +1,8 @@
 TileMapLayer
+Node2D
 TextureRect
 CanvasLayer
 Timer
-Node2D
 TileMap
 RichTextLabel
 AnimatedSprite2D
