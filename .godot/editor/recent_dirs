@@ -1,7 +1,12 @@
+<<<<<<< Updated upstream
 res://script
 res://art/objects
 res://
+=======
+>>>>>>> Stashed changes
 res://scene
+res://art/tileset
+res://
 C:/GODOT proj/BioWalkers
 res://art/backgrounds
 C:/GODOT proj
@@ -14,5 +19,4 @@ C:/GODOT proj/art/characters/enemy
 C:/Program Files/Java/jdk-22/bin
 res://art
 res://sfx
-res://art/tileset
 res://dialogue
