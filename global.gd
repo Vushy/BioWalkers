@@ -33,6 +33,7 @@ var playerDeathAnim
 var enemyAtk
 var enemyMove
 var enemyRetreat
+var enemyDead = false
 var player_alive = true
 # conditions
 var Correct 

@@ -78,6 +78,7 @@ func updateEnemyHealth():
 	enemyHealthbar.value -= playerDamage
 	print(enemyHealthbar.value)
 	if enemyHealthbar.value == 0:
+		global.enemyDead = true
 		enemyState.travel('death')
 		print('the enemy is dead')
 
